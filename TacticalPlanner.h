@@ -10,7 +10,7 @@ class TacticalPlanner {
     public :
     TacticalMemento* createMemento();
     void restoreMemento(TacticalMemento* memento);
-} ;
+};
 
 
 
