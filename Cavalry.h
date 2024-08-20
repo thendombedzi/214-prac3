@@ -8,6 +8,7 @@ using namespace std ;
 
 class Cavalry : public UnitComponent {
     public :
+    Cavalry()
     void move() ; // MOVE ??
     void fight() ;
 
