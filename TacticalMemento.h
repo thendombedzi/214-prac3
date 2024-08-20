@@ -7,8 +7,8 @@ using namespace std ;
 
 class TacticalMemento{
     private :
-    
-    friend class Battlestrategy ;
+
+    friend class BattleStrategy ;
     BattleStrategy* storedStrategy ;
 
     public :
