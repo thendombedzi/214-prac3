@@ -1,7 +1,7 @@
-#ifndef TACTICALCOMMAND_H
-#define TACTICALCOMMAND_H
+#ifndef WARARCHIVES_H
+#define WARARCHIVES_H
 
-class TacticalCommand
+class WarArchives
 {
 private:
     
