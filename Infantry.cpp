@@ -14,5 +14,9 @@ void Infantry::attack()
     cout << "Infantry is engaging in combat."<<endl;
 }
 
+void Infantry::fight(){
+    cout << "Infantry engaging in combat ." << endl ;
+}
+
 Infantry::~Infantry()
 {}

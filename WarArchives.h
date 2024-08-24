@@ -22,7 +22,7 @@ class WarArchives
     public : 
         void addTacticalMemento(TacticalMemento* memento, string label);
         void removeTacticalMemento(string label);
-        TacticalMemento* getTacticalMemento(const std::string& label);
+        TacticalMemento* getTacticalMemento(const string& label) const ;
         // void undo(); , maybe ?
         // might add more methods     
 };

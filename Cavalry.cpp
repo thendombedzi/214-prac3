@@ -13,6 +13,10 @@ void Cavalry::attack()
 {
     cout << "Cavalry is engaging in combat."<<endl;  
 }
+
+void Cavalry::fight(){
+    cout << "Cavalry attacking the enemy ." << endl ;
+}
 Cavalry::~Cavalry()
 {}
 
