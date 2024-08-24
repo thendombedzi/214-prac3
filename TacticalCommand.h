@@ -1,12 +1,16 @@
 #ifndef TACTICALCOMMAND_H
 #define TACTICALCOMMAND_H
 
-class TacticalCommand
-{
+#include "BattleStrategy.h"
+
+class TacticalCommand {
 private:
-    
+    BattleStrategy* strategy;
+
 public:
-    
+    void setStrategy(BattleStrategy* s);
+    void executeStrategy();
+    void chooseBestStrategy();
 };
 
 

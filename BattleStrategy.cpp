@@ -1,2 +1,8 @@
 #include <iostream>
-#include <string>
+
+#include "BattleStrategy.h"
+
+using namespace std;
+
+BattleStrategy::~BattleStrategy() 
+{ }

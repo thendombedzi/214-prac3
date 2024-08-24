@@ -1,16 +1,20 @@
 #ifndef CAVALRY_H
 #define CAVALRY_H
 
-#include "UnitComponent.h";
+#include "LegionUnit.h"
+#include "UnitComponent.h"
 #include <iostream>
 #include <string>
 using namespace std ;
 
-class Cavalry : public UnitComponent {
+class Cavalry : public UnitComponent,public LegionUnit {
     public :
     Cavalry()
-    void move() ; // MOVE ??
+    void move() ; //MOVE ??
     void fight() ;
+    void attack();
+    virtual ~Cavalry();
+
 
     private :
     int healthPerSoldier ;
