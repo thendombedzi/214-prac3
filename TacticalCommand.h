@@ -8,6 +8,7 @@
 class TacticalCommand {
 private:
     BattleStrategy* strategy;
+     
     WarArchives* archives ;
 
 public:

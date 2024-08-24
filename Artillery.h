@@ -14,11 +14,11 @@ class  Artillery : public UnitComponent,public LegionUnit {
     void attack();
     virtual ~Artillery();
 
-    private :
-    int healthPerSoldier ;
-    int damagePerSoldier ;
-    int defencePerSoldier ;
-    string untiName ;
+    // private :
+    // int healthPerSoldier ;
+    // int damagePerSoldier ;
+    // int defencePerSoldier ;
+    // string untiName ;
 };
 
 

@@ -7,7 +7,7 @@ class UnitComponent{
     virtual void fight() = 0 ;
     virtual void add(UnitComponent* component) = 0 ;
     virtual void remove(UnitComponent* component) = 0 ;
-    virtual ~UnitComponent() = 0 ;
+    virtual ~UnitComponent() = default;
 };
 
 
