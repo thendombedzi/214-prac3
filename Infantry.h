@@ -17,11 +17,11 @@ class Infantry : public UnitComponent,public LegionUnit {
     virtual ~Infantry();
 
 
-    private :
-    int healthPerSoldier ;
-    int damagePerSoldier ;
-    int defencePerSoldier ;
-    string untiName ;
+    // private :
+    // int healthPerSoldier ;
+    // int damagePerSoldier ;
+    // int defencePerSoldier ;
+    // string untiName ;
 };
 
 #endif

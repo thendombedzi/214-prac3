@@ -12,7 +12,8 @@ class WarArchives
     vector<TacticalMemento*> mementos ;
 
     public:
-    void addMemento(TacticalMemento* memento);
+    void addTacticalMemento(TacticalMemento* memento, string label);
+    void removeTacticalMemento(label: string)
     TacticalMemento* undo();
     ~WarArchives();
     
