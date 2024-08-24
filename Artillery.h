@@ -9,16 +9,11 @@ using namespace std ;
 
 class  Artillery : public UnitComponent,public LegionUnit {
     public :
-     void move() ; //MOVE ??
+    void move() ; 
     void fight() ;
     void attack();
     virtual ~Artillery();
-
-    // private :
-    // int healthPerSoldier ;
-    // int damagePerSoldier ;
-    // int defencePerSoldier ;
-    // string untiName ;
+    
 };
 
 
