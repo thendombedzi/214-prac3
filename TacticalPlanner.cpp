@@ -22,3 +22,7 @@ TacticalPlanner::~TacticalPlanner(){
     currentStrategy = nullptr ;
 }
 
+void TacticalPlanner::setStrategy(BattleStrategy* newStrategy){
+    currentStrategy = newStrategy ;
+}
+

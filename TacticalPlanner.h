@@ -13,6 +13,7 @@ class TacticalPlanner { // Originator
 
     public :
     TacticalPlanner() : currentStrategy(nullptr) {};
+    void setStrategy(BattleStrategy* newStrategy);
     TacticalMemento* createMemento();
     void restoreMemento(TacticalMemento* memento);
     ~TacticalPlanner();

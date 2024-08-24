@@ -5,6 +5,7 @@
 void TacticalCommand::setStrategy(BattleStrategy* s) 
 {
     strategy = s;
+    planner->setStrategy(s);
 }
 
 void TacticalCommand::executeStrategy() 
