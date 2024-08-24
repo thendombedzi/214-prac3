@@ -20,17 +20,3 @@ void TacticalCommand::chooseBestStrategy()
 {
       //still to implement
 }
-
-void TacticalCommand::saveState(const std::string& label) {
-        TacticalMemento* memento = planner->createMemento();
-        archives->addTacticalMemento(memento, label);
-    }
-
-  
-void TacticalCommand::restoreState(const std::string& label) {
-    TacticalMemento* memento = archives->getTacticalMemento(label);
-    if (memento) {
-        planner->restoreMemento(memento);
-        delete memento; 
-    }
-}
