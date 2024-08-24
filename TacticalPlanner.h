@@ -13,7 +13,4 @@ class TacticalPlanner {
     void restoreMemento(TacticalMemento* memento);
 };
 
-
-
-
 #endif
