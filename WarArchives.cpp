@@ -1,21 +1,14 @@
 #include "WarArchives.h"
 
-void WarArchives::addMemento(TacticalMemento* state){
-    mementos.push_back(state);
+void WarArchives::addTacticalMemento(TacticalMemento* memento, string label){
+    mementoList.emplace_back(label, memento);
 }
 
-TacticalMemento* WarArchives::undo(){
-    if(!mementos.empty()){
-        TacticalMemento* lastMemento = mementos.back();
-        mementos.pop_back();
-        return lastMemento ;
+void WarArchives::removeTacticalMemento(string label){
+    auto it = remove_if(mementoList.begin(), mementoList.end(),[&](const Pair& pair){
+        return pair.key == label ;
+    });
+    if(it != mementoList.end()){
+        mementoList.erase(it, mementoList.end());
     }
-    return nullptr ;
-}
-
-WarArchives::~WarArchives(){
-    for(TacticalMemento* memento : mementos){
-        delete memento ;
-    }
-    mementos.clear();
 }

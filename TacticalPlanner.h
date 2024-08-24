@@ -4,14 +4,18 @@
 #include "BattleStrategy.h";
 #include "TacticalMemento.h";
 
+// Responsibility : Manages the strategic decisions and state changes in battle operations,
+// Using the Memento Pattern to save and restore previous states
 
-class TacticalPlanner {
+class TacticalPlanner { // Originator
     private :
-    BattleStrategy* currentStrategy ;
+    BattleStrategy* currentStrategy ; // Current State
 
     public :
+    TacticalPlanner() : currentStrategy(nullptr) {};
     TacticalMemento* createMemento();
     void restoreMemento(TacticalMemento* memento);
-};
+    ~TacticalPlanner();
+};  
 
 #endif

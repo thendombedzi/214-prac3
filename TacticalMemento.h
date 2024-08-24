@@ -7,12 +7,17 @@ using namespace std ;
 
 class TacticalMemento{
     private :
-
-    friend class BattleStrategy ;
     BattleStrategy* storedStrategy ;
 
     public :
+    TacticalMemento(BattleStrategy* strategy = nullptr) : storedStrategy(strategy){};
     void storeStrategy(BattleStrategy* strategy);
+    BattleStrategy* getStoredStrategy() const;
+    
+    ~TacticalMemento(){
+        cout << "Memento deleted and storedStrategy deleted .";
+        delete storedStrategy ;
+    }
 };
 
 
