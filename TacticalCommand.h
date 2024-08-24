@@ -8,13 +8,17 @@
 class TacticalCommand {
 private:
     BattleStrategy* strategy;
+
     TacticalPlanner* planner;
-    WarArchives* arvhives ;
+    WarArchives* archives ;
 
 public:
     void setStrategy(BattleStrategy* s);
     void executeStrategy();
     void chooseBestStrategy();
+
+    void saveState(const string& label);
+    void restoreState(const string& label);
 };
 
 

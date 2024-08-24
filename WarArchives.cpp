@@ -12,3 +12,12 @@ void WarArchives::removeTacticalMemento(string label){
         mementoList.erase(it, mementoList.end());
     }
 }
+
+TacticalMemento* WarArchives::getTacticalMemento(const string& label) const {
+        for (const auto& pair : mementoList) {
+            if (pair.key == label) {
+                return pair.memento;
+            }
+        }
+        return nullptr; // Return nullptr if the label is not found
+    }
