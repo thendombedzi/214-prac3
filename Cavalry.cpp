@@ -6,12 +6,12 @@ using namespace std;
 
 void Cavalry::move()
 {
-    cout << "Cavalry moving on the battlefield."<<endl;
+    cout << "Cavalry is moving on the battlefield."<<endl;
 }
 
 void Cavalry::attack()
 {
-    cout << "Cavalry engaging in combat."<<endl;  
+    cout << "Cavalry is engaging in combat."<<endl;  
 }
 Cavalry::~Cavalry()
 {}

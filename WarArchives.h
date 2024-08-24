@@ -3,7 +3,7 @@
 
 #include <string>
 #include <algorithm>
-#include "TacticalMemento.h";
+#include "TacticalMemento.h"
 #include <vector>
 #include <iostream>
 
@@ -22,6 +22,7 @@ class WarArchives
     public : 
         void addTacticalMemento(TacticalMemento* memento, string label);
         void removeTacticalMemento(string label);
+        TacticalMemento* getTacticalMemento(const std::string& label);
         // void undo(); , maybe ?
         // might add more methods     
 };

@@ -1,4 +1,4 @@
-#include "TacticalMemento.h";
+#include "TacticalMemento.h"
 
 void TacticalMemento::storeStrategy(BattleStrategy* strategy){
     if(storedStrategy != nullptr){

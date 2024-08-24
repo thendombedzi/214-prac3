@@ -1,7 +1,7 @@
 #ifndef TACTICALMEMENTO_H
 #define TACTICALMEMENTO_H
 
-#include "BattleStrategy.h";
+#include "BattleStrategy.h"
 #include <iostream>
 using namespace std ;
 

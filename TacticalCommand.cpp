@@ -13,10 +13,20 @@ void TacticalCommand::executeStrategy()
     if (strategy) 
     {
         strategy->engage();
+         for (auto unit : units) {
+                unit->move();
+                unit->attack();
+            }
     }
 }
 
 void TacticalCommand::chooseBestStrategy() 
 {
-      //still to implement
+      TacticalMemento* memento = archives->getTacticalMemento("last_successful");
+        if (memento) {
+            planner->restoreMemento(memento);
+            strategy = planner->getCurrentStrategy();
+        } else {
+            setStrategy(new Flanking());
+        }
 }

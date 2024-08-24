@@ -19,5 +19,5 @@ using namespace std;
  }
  void WoodlandFactory::deployArtillery()
  {
-    //still to implement
+   cout << "Deploying Riverbank Factory siege engines for terrain challenges" << endl;
  }

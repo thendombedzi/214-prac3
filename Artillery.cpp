@@ -6,12 +6,12 @@ using namespace std;
 
 void Artillery::move()
 {
-     cout << "Artillery moving on the battlefield."<<endl;
+     cout << "Artillery is moving on the battlefield."<<endl;
 }
 
 void Artillery::attack()
 {
-    cout << "Artillery engaging in combat."<<endl;
+    cout << "Artillery is engaging in combat."<<endl;
 }
 
 Artillery::~Artillery()

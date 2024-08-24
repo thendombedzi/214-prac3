@@ -1,4 +1,4 @@
-#include "TacticalPlanner.h";
+#include "TacticalPlanner.h"
 
 TacticalMemento* TacticalPlanner::createMemento(){
     return new TacticalMemento(currentStrategy);
@@ -25,4 +25,7 @@ TacticalPlanner::~TacticalPlanner(){
 void TacticalPlanner::setStrategy(BattleStrategy* newStrategy){
     currentStrategy = newStrategy ;
 }
+BattleStrategy* TacticalPlanner::getCurrentStrategy() const {
+        return currentStrategy;
+    }
 

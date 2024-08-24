@@ -20,5 +20,5 @@ using namespace std;
 
  void RiverbankFactory::deployArtillery()
  {
-      //still to implement
+      cout << "Deploying Riverbank Factory siege engines for terrain challenges" << endl;
  }

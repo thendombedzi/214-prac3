@@ -9,7 +9,7 @@
 class WoodlandFactory : public LegionFactory 
 {
 public:
-    Infantry* createInfantry() ;
+    Infantry* createInfantry()  ;
     Cavalry* createCavalry() ;
     Artillery* createArtillery() ;
     void deployArtillery();
