@@ -1,0 +1,35 @@
+        -:    0:Source:OpenField_I.cpp
+        -:    1:#include <iostream>
+        -:    2:#include "OpenField_I.h"
+        -:    3:
+        -:    4:using namespace std;
+        -:    5:
+        2:    6:void OpenField_I::move()
+        -:    7:{
+        2:    8:    Infantry::move();
+        2:    9:    cout << "Openfield Infantry is moving on the battlefield."<<endl;
+        2:   10:}
+        -:   11:
+        1:   12:void OpenField_I::attack()
+        -:   13:{
+        1:   14:    Infantry::attack();
+        1:   15:    cout << "Openfield Infantry is engaging in combat."<<endl;
+        1:   16:}
+        -:   17:
+        4:   18:OpenField_I::~OpenField_I()
+        -:   19:{
+        -:   20:    
+        4:   21:}
+------------------
+_ZN11OpenField_ID0Ev:
+        2:   18:OpenField_I::~OpenField_I()
+        -:   19:{
+        -:   20:    
+        2:   21:}
+------------------
+_ZN11OpenField_ID2Ev:
+        2:   18:OpenField_I::~OpenField_I()
+        -:   19:{
+        -:   20:    
+        2:   21:}
+------------------

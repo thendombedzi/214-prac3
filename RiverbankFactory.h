@@ -12,6 +12,7 @@ public:
     Cavalry* createCavalry() ;
     Artillery* createArtillery() ;
     void deployArtillery();
+    ~RiverbankFactory();
 };
 
 #endif

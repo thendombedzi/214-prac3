@@ -14,10 +14,7 @@ class TacticalMemento{
     void storeStrategy(BattleStrategy* strategy);
     BattleStrategy* getStoredStrategy() const;
     
-    ~TacticalMemento(){
-        cout << "Memento deleted and storedStrategy deleted .";
-        delete storedStrategy ;
-    }
+    ~TacticalMemento();
 };
 
 

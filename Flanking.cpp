@@ -1,6 +1,6 @@
 #include <iostream>
 #include "Flanking.h"
-using namespace std ;
+using namespace std;
 
 void Flanking::engage() 
 {

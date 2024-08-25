@@ -4,7 +4,7 @@
 
 void TacticalCommand::setStrategy(BattleStrategy* s) 
 {
-    strategy = s;
+    this->strategy = s;
 }
 
 void TacticalCommand::executeStrategy() 
@@ -28,4 +28,15 @@ void TacticalCommand::chooseBestStrategy()
         } else {
             setStrategy(new Flanking());
         }
+}
+TacticalCommand::~TacticalCommand() 
+{
+    cout << "Deleting strategy" << endl;
+    //delete strategy;
+    // delete planner;
+    // delete archives;
+     for (LegionUnit* unit : units) {
+        delete unit;
+    }
+    //strategy = 0;
 }

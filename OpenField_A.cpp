@@ -14,3 +14,6 @@ void OpenField_A::attack()
     Artillery::attack();
     cout << "Openfield Artillery is engaging in combat."<<endl;
 }
+
+OpenField_A::~OpenField_A()
+{}

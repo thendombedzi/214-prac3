@@ -1,0 +1,26 @@
+        -:    0:Source:Fortification.cpp
+        -:    1:#include <iostream>
+        -:    2:#include "Fortification.h"
+        -:    3:using namespace std ;
+        -:    4:
+        1:    5:void Fortification::engage() 
+        -:    6:{
+        1:    7:   cout << "Implementing the Fortification's engage()" << endl;
+        1:    8:}
+        2:    9:Fortification::~Fortification()
+        -:   10:{
+        1:   11:      cout << "Fortification deleting" << endl;
+        2:   12:}
+------------------
+_ZN13FortificationD0Ev:
+        1:    9:Fortification::~Fortification()
+        -:   10:{
+        -:   11:      cout << "Fortification deleting" << endl;
+        1:   12:}
+------------------
+_ZN13FortificationD2Ev:
+        1:    9:Fortification::~Fortification()
+        -:   10:{
+        1:   11:      cout << "Fortification deleting" << endl;
+        1:   12:}
+------------------

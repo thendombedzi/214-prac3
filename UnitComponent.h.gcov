@@ -1,0 +1,41 @@
+        -:    0:Source:UnitComponent.h
+        -:    1:#ifndef UNITCOMPONENT_H
+        -:    2:#define UNITCOMPONENT_H
+        -:    3:
+        -:    4:class UnitComponent{
+        -:    5:    public :
+        -:    6:    virtual void move() = 0 ;
+        -:    7:    virtual void fight() = 0 ;
+        -:    8:    virtual void add(UnitComponent* component) = 0 ;
+        -:    9:    virtual void remove(UnitComponent* component) = 0 ;
+      21*:   10:    virtual ~UnitComponent() = default;
+------------------
+_ZN13UnitComponentD0Ev:
+    #####:   10:    virtual ~UnitComponent() = default;
+------------------
+_ZN13UnitComponentD2Ev:
+       21:   10:    virtual ~UnitComponent() = default;
+------------------
+_ZN13UnitComponentD0Ev:
+    #####:   10:    virtual ~UnitComponent() = default;
+------------------
+_ZN13UnitComponentD2Ev:
+    #####:   10:    virtual ~UnitComponent() = default;
+------------------
+_ZN13UnitComponentD0Ev:
+    #####:   10:    virtual ~UnitComponent() = default;
+------------------
+_ZN13UnitComponentD2Ev:
+    #####:   10:    virtual ~UnitComponent() = default;
+------------------
+_ZN13UnitComponentD0Ev:
+    #####:   10:    virtual ~UnitComponent() = default;
+------------------
+_ZN13UnitComponentD2Ev:
+    #####:   10:    virtual ~UnitComponent() = default;
+------------------
+        -:   11:};
+        -:   12:
+        -:   13:
+        -:   14:
+        -:   15:#endif

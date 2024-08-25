@@ -26,3 +26,6 @@ Artillery* OpenFieldFactory::createArtillery() {
  {
      cout << "Deploying Openfield Factory siege engines for terrain challenges" << endl;
  }
+
+ OpenFieldFactory::~OpenFieldFactory()
+ {}

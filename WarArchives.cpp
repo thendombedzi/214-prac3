@@ -21,3 +21,7 @@ TacticalMemento* WarArchives::getTacticalMemento(const string& label) const {
         }
         return nullptr; // Return nullptr if the label is not found
     }
+
+WarArchives::~WarArchives() {
+   
+}

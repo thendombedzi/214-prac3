@@ -7,7 +7,7 @@ class Flanking : public BattleStrategy
 {
 public:
     virtual void engage() ;
-    ~Flanking();
+    ~Flanking() ;
 
 };
 

@@ -12,6 +12,8 @@ class Cavalry : public UnitComponent, public LegionUnit {
     void move() ; 
     void fight() ;
     void attack();
+    void add(UnitComponent* component) override;
+    void remove(UnitComponent* component) override;
     virtual ~Cavalry();
 
 };

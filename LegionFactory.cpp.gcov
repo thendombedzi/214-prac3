@@ -1,0 +1,15 @@
+        -:    0:Source:LegionFactory.cpp
+        -:    1:#include <iostream>
+        -:    2:#include "LegionFactory.h"
+        -:    3:
+       6*:    4:LegionFactory::~LegionFactory()
+       6*:    5:{}
+------------------
+_ZN13LegionFactoryD0Ev:
+    #####:    4:LegionFactory::~LegionFactory()
+    #####:    5:{}
+------------------
+_ZN13LegionFactoryD2Ev:
+        6:    4:LegionFactory::~LegionFactory()
+        6:    5:{}
+------------------

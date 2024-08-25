@@ -23,6 +23,7 @@ class WarArchives
         void addTacticalMemento(TacticalMemento* memento, string label);
         void removeTacticalMemento(string label);
         TacticalMemento* getTacticalMemento(const string& label) const ;
+        ~WarArchives();
         // void undo(); , maybe ?
         // might add more methods     
 };

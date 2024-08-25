@@ -22,3 +22,6 @@ using namespace std;
  {
       cout << "Deploying Riverbank Factory siege engines for terrain challenges" << endl;
  }
+
+ RiverbankFactory::~RiverbankFactory()
+ {}

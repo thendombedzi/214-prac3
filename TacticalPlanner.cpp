@@ -10,9 +10,8 @@ void TacticalPlanner::restoreMemento(TacticalMemento* memento){
         return ;
     }
 
-    if(currentStrategy != nullptr){
         delete currentStrategy ;
-    }
+    
 
     currentStrategy = memento->getStoredStrategy();
 }
@@ -23,6 +22,7 @@ TacticalPlanner::~TacticalPlanner(){
 }
 
 void TacticalPlanner::setStrategy(BattleStrategy* newStrategy){
+    delete currentStrategy;
     currentStrategy = newStrategy ;
 }
 BattleStrategy* TacticalPlanner::getCurrentStrategy() const {

@@ -1,0 +1,52 @@
+        -:    0:Source:Legion.cpp
+        -:    1:#include "Legion.h"
+        -:    2:
+    #####:    3:void Legion::move(){
+    #####:    4:    cout << "Legion moving as a unit ." << endl ;
+    #####:    5:    for(UnitComponent* child : children){
+    #####:    6:        child->move();
+        -:    7:    }
+    #####:    8:}
+        -:    9:
+    #####:   10:void Legion::fight(){
+    #####:   11:    cout << "Legion engaging in battle ." << endl ;
+    #####:   12:    for(UnitComponent* child : children){
+    #####:   13:        child->fight();
+        -:   14:    }
+    #####:   15:}
+        -:   16:
+        9:   17:void Legion::add(UnitComponent* child){
+        9:   18:    children.push_back(child);
+        9:   19:}
+        -:   20:
+    #####:   21:void Legion::remove(UnitComponent* child) {
+    #####:   22:    for (auto it = children.begin(); it != children.end(); ++it) {
+    #####:   23:        if (*it == child) {
+    #####:   24:            children.erase(it);
+    #####:   25:            return;  
+        -:   26:        }
+        -:   27:    }
+        -:   28:}
+        6:   29:Legion::~Legion()
+        -:   30:{
+       12:   31:    for (auto child : children) {
+        9:   32:            delete child; // Recursively delete children
+        -:   33:        }
+        6:   34:}
+------------------
+_ZN6LegionD0Ev:
+        3:   29:Legion::~Legion()
+        -:   30:{
+        -:   31:    for (auto child : children) {
+        -:   32:            delete child; // Recursively delete children
+        -:   33:        }
+        3:   34:}
+------------------
+_ZN6LegionD2Ev:
+        3:   29:Legion::~Legion()
+        -:   30:{
+       12:   31:    for (auto child : children) {
+        9:   32:            delete child; // Recursively delete children
+        -:   33:        }
+        3:   34:}
+------------------

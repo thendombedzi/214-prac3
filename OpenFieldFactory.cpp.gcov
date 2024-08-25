@@ -1,0 +1,41 @@
+        -:    0:Source:OpenFieldFactory.cpp
+        -:    1:#include <iostream>
+        -:    2:
+        -:    3:using namespace std;
+        -:    4:
+        -:    5:#include "OpenFieldFactory.h"
+        -:    6:#include "OpenField_I.h" // Header file for OpenField_I
+        -:    7:#include "OpenField_C.h" // Header file for OpenField_C
+        -:    8:#include "OpenField_A.h" // Header file for OpenField_A"
+        -:    9:
+        -:   10:// Implementing Infantry creation method
+        2:   11:Infantry* OpenFieldFactory::createInfantry() {
+        2:   12:    return new OpenField_I();  // Ensure OpenField_I is a concrete class
+        -:   13:}
+        -:   14:
+        -:   15:// Implementing Cavalry creation method
+        2:   16:Cavalry* OpenFieldFactory::createCavalry() {
+        2:   17:    return new OpenField_C();  // Ensure OpenField_C is a concrete class
+        -:   18:}
+        -:   19:
+        -:   20:// Implementing Artillery creation method
+        2:   21:Artillery* OpenFieldFactory::createArtillery() {
+        2:   22:    return new OpenField_A();  // Ensure OpenField_A is a concrete class
+        -:   23:}
+        -:   24:
+    #####:   25: void OpenFieldFactory::deployArtillery()
+        -:   26: {
+    #####:   27:     cout << "Deploying Openfield Factory siege engines for terrain challenges" << endl;
+    #####:   28: }
+        -:   29:
+        4:   30: OpenFieldFactory::~OpenFieldFactory()
+        4:   31: {}
+------------------
+_ZN16OpenFieldFactoryD0Ev:
+        2:   30: OpenFieldFactory::~OpenFieldFactory()
+        2:   31: {}
+------------------
+_ZN16OpenFieldFactoryD2Ev:
+        2:   30: OpenFieldFactory::~OpenFieldFactory()
+        2:   31: {}
+------------------

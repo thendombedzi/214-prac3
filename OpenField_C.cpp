@@ -14,3 +14,6 @@ void OpenField_C::attack()
     Cavalry::attack();
     cout << "Openfield Cavalry is engaging in combat."<<endl;
 }
+
+OpenField_C::~OpenField_C()
+{}

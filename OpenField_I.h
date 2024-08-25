@@ -8,6 +8,7 @@ class OpenField_I : public Infantry{
     public:
      void move();
      void attack();
+     ~OpenField_I() override;
 };
 
 #endif

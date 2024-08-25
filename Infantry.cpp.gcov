@@ -1,0 +1,40 @@
+        -:    0:Source:Infantry.cpp
+        -:    1:#include <iostream>
+        -:    2:using namespace std;
+        -:    3:
+        -:    4:#include "Infantry.h"
+        -:    5:
+        -:    6:
+        6:    7:void Infantry::move()
+        -:    8:{
+        6:    9:    cout << "Infantry is moving on the battlefield."<<endl;
+        6:   10:}
+        -:   11:
+        3:   12:void Infantry::attack()
+        -:   13:{
+        3:   14:    cout << "Infantry is engaging in combat."<<endl;
+        3:   15:}
+        -:   16:
+        3:   17:void Infantry::fight(){
+        3:   18:    cout << "Infantry engaging in combat ." << endl ;
+        3:   19:}
+        -:   20:
+    #####:   21:void Infantry::add(UnitComponent* component)  {
+    #####:   22:        std::cout << "Cannot add to leaf unit." << std::endl;
+    #####:   23:    }
+        -:   24:
+    #####:   25:void Infantry :: remove(UnitComponent* component)  {
+    #####:   26:        std::cout << "Cannot remove from leaf unit." << std::endl;
+    #####:   27:    }
+        -:   28:
+       6*:   29:Infantry::~Infantry()
+       6*:   30:{}
+------------------
+_ZN8InfantryD0Ev:
+    #####:   29:Infantry::~Infantry()
+    #####:   30:{}
+------------------
+_ZN8InfantryD2Ev:
+        6:   29:Infantry::~Infantry()
+        6:   30:{}
+------------------

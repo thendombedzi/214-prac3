@@ -18,6 +18,7 @@ public:
     void setStrategy(BattleStrategy* s);
     void executeStrategy();
     void chooseBestStrategy();
+    ~TacticalCommand();
 };
 
 

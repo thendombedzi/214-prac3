@@ -13,6 +13,7 @@ public:
     Cavalry* createCavalry() ;
     Artillery* createArtillery() ;
     void deployArtillery();
+    ~WoodlandFactory();
 };
 
 #endif

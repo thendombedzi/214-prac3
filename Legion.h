@@ -17,7 +17,7 @@ class Legion : public UnitComponent {
         void fight() override ;
         void add(UnitComponent* component) override ;
         void remove(UnitComponent* component) override ;
-        ~Legion();
+        ~Legion()override;
 };
 
 #endif

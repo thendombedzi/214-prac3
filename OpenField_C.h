@@ -8,6 +8,7 @@ class OpenField_C : public Cavalry{
     public:
      void move();
      void attack();
+     ~OpenField_C() override;
 };
 
 #endif

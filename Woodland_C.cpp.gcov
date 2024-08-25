@@ -1,0 +1,17 @@
+        -:    0:Source:Woodland_C.cpp
+        -:    1:#include <iostream>
+        -:    2:#include "Woodland_C.h"
+        -:    3:
+        -:    4:using namespace std;
+        -:    5:
+        2:    6:void Woodland_C::move()
+        -:    7:{
+        2:    8:    Cavalry::move();
+        2:    9:    cout << "Woodland Cavalry is moving on the battlefield."<<endl;
+        2:   10:}
+        -:   11:
+        1:   12:void Woodland_C::attack()
+        -:   13:{
+        1:   14:    Cavalry::attack();
+        1:   15:    cout << "Woodland Cavalry is engaging in combat."<<endl;
+        1:   16:}

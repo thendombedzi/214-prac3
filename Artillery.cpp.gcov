@@ -1,0 +1,38 @@
+        -:    0:Source:Artillery.cpp
+        -:    1:#include <iostream>
+        -:    2:using namespace std;
+        -:    3:
+        -:    4:#include "Artillery.h"
+        -:    5:
+        -:    6:
+        6:    7:void Artillery::move()
+        -:    8:{
+        6:    9:     cout << "Artillery is moving on the battlefield."<<endl;
+        6:   10:}
+        -:   11:
+        3:   12:void Artillery::attack()
+        -:   13:{
+        3:   14:    cout << "Artillery is engaging in combat."<<endl;
+        3:   15:}
+        3:   16:void Artillery::fight(){
+        3:   17:    cout << "Artillery firing ." << endl ;
+        3:   18:}
+    #####:   19:void Artillery::add(UnitComponent* component) {
+    #####:   20:        std::cout << "Cannot add to leaf unit." << std::endl;
+    #####:   21:    }
+        -:   22:
+    #####:   23:void Artillery :: remove(UnitComponent* component)  {
+    #####:   24:        std::cout << "Cannot remove from leaf unit." << std::endl;
+    #####:   25:    }
+        -:   26:
+       6*:   27:Artillery::~Artillery()
+       6*:   28:{}
+------------------
+_ZN9ArtilleryD0Ev:
+    #####:   27:Artillery::~Artillery()
+    #####:   28:{}
+------------------
+_ZN9ArtilleryD2Ev:
+        6:   27:Artillery::~Artillery()
+        6:   28:{}
+------------------

@@ -1,0 +1,26 @@
+        -:    0:Source:Flanking.cpp
+        -:    1:#include <iostream>
+        -:    2:#include "Flanking.h"
+        -:    3:using namespace std;
+        -:    4:
+        1:    5:void Flanking::engage() 
+        -:    6:{
+        1:    7:   cout << "Implementing the Flanking's engage()" << endl;
+        1:    8:}
+        2:    9:Flanking::~Flanking()
+        -:   10:{
+        1:   11:      cout << "Flanking deleting" << endl;
+        2:   12:}
+------------------
+_ZN8FlankingD0Ev:
+        1:    9:Flanking::~Flanking()
+        -:   10:{
+        -:   11:      cout << "Flanking deleting" << endl;
+        1:   12:}
+------------------
+_ZN8FlankingD2Ev:
+        1:    9:Flanking::~Flanking()
+        -:   10:{
+        1:   11:      cout << "Flanking deleting" << endl;
+        1:   12:}
+------------------
