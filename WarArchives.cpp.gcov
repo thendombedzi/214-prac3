@@ -1,14 +1,14 @@
         -:    0:Source:WarArchives.cpp
         -:    1:#include "WarArchives.h"
         -:    2:
-        3:    3:void WarArchives::addTacticalMemento(TacticalMemento* memento, string label){
-        3:    4:    mementoList.emplace_back(label, memento);
-        3:    5:}
+        9:    3:void WarArchives::addTacticalMemento(TacticalMemento* memento, string label){
+        9:    4:    mementoList.emplace_back(label, memento);
+        9:    5:}
         -:    6:
     #####:    7:void WarArchives::removeTacticalMemento(string label){
     #####:    8:    auto it = remove_if(mementoList.begin(), mementoList.end(),[&](const Pair& pair){
     #####:    9:        return pair.key == label ;
-    #####:   10:    });
+        -:   10:    });
     #####:   11:    if(it != mementoList.end()){
     #####:   12:        mementoList.erase(it, mementoList.end());
         -:   13:    }
@@ -23,6 +23,6 @@
     #####:   22:        return nullptr; // Return nullptr if the label is not found
         -:   23:    }
         -:   24:
-        1:   25:WarArchives::~WarArchives() {
+        3:   25:WarArchives::~WarArchives() {
         -:   26:   
-        1:   27:}
+        3:   27:}

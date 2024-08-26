@@ -29,6 +29,6 @@ void Legion::remove(UnitComponent* child) {
 Legion::~Legion()
 {
     for (auto child : children) {
-            delete child; // Recursively delete children
+            delete child; 
         }
 }

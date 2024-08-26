@@ -4,14 +4,14 @@
         -:    3:
         -:    4:using namespace std;
         -:    5:
-        2:    6:void Woodland_I::move()
+        6:    6:void Woodland_I::move()
         -:    7:{
-        2:    8:    Infantry::move();
-        2:    9:    cout << "Woodland Infantry is moving on the battlefield."<<endl;
-        2:   10:}
+        6:    8:    Infantry::move();
+        6:    9:    cout << "Woodland Infantry is moving on the battlefield."<<endl;
+        6:   10:}
         -:   11:
-        1:   12:void Woodland_I::attack()
+        3:   12:void Woodland_I::attack()
         -:   13:{
-        1:   14:    Infantry::attack();
-        1:   15:    cout << "Woodland Infantry is engaging in combat."<<endl;
-        1:   16:}
+        3:   14:    Infantry::attack();
+        3:   15:    cout << "Woodland Infantry is engaging in combat."<<endl;
+        3:   16:}

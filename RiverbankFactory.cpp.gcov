@@ -4,19 +4,19 @@
         -:    3:using namespace std;
         -:    4:
         -:    5:
-        2:    6: Infantry* RiverbankFactory::createInfantry()  
+        6:    6: Infantry* RiverbankFactory::createInfantry()  
         -:    7: {
-        2:    8:        return new Riverbank_I();
+        6:    8:        return new Riverbank_I();
         -:    9: }
         -:   10:
-        2:   11: Cavalry* RiverbankFactory::createCavalry()  
+        6:   11: Cavalry* RiverbankFactory::createCavalry()  
         -:   12: {
-        2:   13:        return new Riverbank_C();
+        6:   13:        return new Riverbank_C();
         -:   14: }
         -:   15:
-        2:   16:  Artillery* RiverbankFactory::createArtillery()  
+        6:   16:  Artillery* RiverbankFactory::createArtillery()  
         -:   17: {
-        2:   18:        return new Riverbank_A();
+        6:   18:        return new Riverbank_A();
         -:   19: }
         -:   20:
     #####:   21: void RiverbankFactory::deployArtillery()
@@ -24,14 +24,14 @@
     #####:   23:      cout << "Deploying Riverbank Factory siege engines for terrain challenges" << endl;
     #####:   24: }
         -:   25:
-        4:   26: RiverbankFactory::~RiverbankFactory()
-        4:   27: {}
+       12:   26: RiverbankFactory::~RiverbankFactory()
+       12:   27: {}
 ------------------
 _ZN16RiverbankFactoryD0Ev:
-        2:   26: RiverbankFactory::~RiverbankFactory()
-        2:   27: {}
+        6:   26: RiverbankFactory::~RiverbankFactory()
+        6:   27: {}
 ------------------
 _ZN16RiverbankFactoryD2Ev:
-        2:   26: RiverbankFactory::~RiverbankFactory()
-        2:   27: {}
+        6:   26: RiverbankFactory::~RiverbankFactory()
+        6:   27: {}
 ------------------

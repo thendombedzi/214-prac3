@@ -4,24 +4,24 @@
         -:    3:
         -:    4:#include "Ambush.h"
         -:    5:
-        1:    6:void Ambush::engage() 
+        3:    6:void Ambush::engage() 
         -:    7:{
-        1:    8:   cout << "Implementing the Ambush's engage()" << endl;
-        1:    9:}
-        2:   10:Ambush::~Ambush()
+        3:    8:   cout << "Implementing the Ambush's engage()" << endl;
+        3:    9:}
+        6:   10:Ambush::~Ambush()
         -:   11:{
-        1:   12:      cout << "Ambush deleting" << endl;
-        2:   13:}
+        3:   12:      cout << "Ambush deleting" << endl;
+        6:   13:}
 ------------------
 _ZN6AmbushD0Ev:
-        1:   10:Ambush::~Ambush()
+        3:   10:Ambush::~Ambush()
         -:   11:{
         -:   12:      cout << "Ambush deleting" << endl;
-        1:   13:}
+        3:   13:}
 ------------------
 _ZN6AmbushD2Ev:
-        1:   10:Ambush::~Ambush()
+        3:   10:Ambush::~Ambush()
         -:   11:{
-        1:   12:      cout << "Ambush deleting" << endl;
-        1:   13:}
+        3:   12:      cout << "Ambush deleting" << endl;
+        3:   13:}
 ------------------

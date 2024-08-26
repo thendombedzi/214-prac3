@@ -1,7 +1,7 @@
-        -:    0:Source:/usr/include/c++/9/ext/type_traits.h
+        -:    0:Source:/usr/include/c++/11/ext/type_traits.h
         -:    1:// -*- C++ -*-
         -:    2:
-        -:    3:// Copyright (C) 2005-2019 Free Software Foundation, Inc.
+        -:    3:// Copyright (C) 2005-2021 Free Software Foundation, Inc.
         -:    4://
         -:    5:// This file is part of the GNU ISO C++ Library.  This library is free
         -:    6:// software; you can redistribute it and/or modify it under the terms
@@ -150,12 +150,12 @@
         -:  149:  // For use in string and vstring.
         -:  150:  template<typename _Type>
         -:  151:    inline bool
-    #####:  152:    __is_null_pointer(_Type* __ptr)
-    #####:  153:    { return __ptr == 0; }
+       9*:  152:    __is_null_pointer(_Type* __ptr)
+       9*:  153:    { return __ptr == 0; }
 ------------------
 _ZN9__gnu_cxx17__is_null_pointerIKcEEbPT_:
-    #####:  152:    __is_null_pointer(_Type* __ptr)
-    #####:  153:    { return __ptr == 0; }
+        9:  152:    __is_null_pointer(_Type* __ptr)
+        9:  153:    { return __ptr == 0; }
 ------------------
 _ZN9__gnu_cxx17__is_null_pointerIKcEEbPT_:
     #####:  152:    __is_null_pointer(_Type* __ptr)
@@ -177,59 +177,65 @@ _ZN9__gnu_cxx17__is_null_pointerIcEEbPT_:
         -:  163:  { return true; }
         -:  164:#endif
         -:  165:
-        -:  166:  // For complex and cmath
-        -:  167:  template<typename _Tp, bool = std::__is_integer<_Tp>::__value>
-        -:  168:    struct __promote
-        -:  169:    { typedef double __type; };
-        -:  170:
-        -:  171:  // No nested __type member for non-integer non-floating point types,
-        -:  172:  // allows this type to be used for SFINAE to constrain overloads in
-        -:  173:  // <cmath> and <complex> to only the intended types.
-        -:  174:  template<typename _Tp>
-        -:  175:    struct __promote<_Tp, false>
-        -:  176:    { };
-        -:  177:
-        -:  178:  template<>
-        -:  179:    struct __promote<long double>
-        -:  180:    { typedef long double __type; };
-        -:  181:
-        -:  182:  template<>
-        -:  183:    struct __promote<double>
-        -:  184:    { typedef double __type; };
-        -:  185:
-        -:  186:  template<>
-        -:  187:    struct __promote<float>
-        -:  188:    { typedef float __type; };
-        -:  189:
-        -:  190:  template<typename _Tp, typename _Up,
-        -:  191:           typename _Tp2 = typename __promote<_Tp>::__type,
-        -:  192:           typename _Up2 = typename __promote<_Up>::__type>
-        -:  193:    struct __promote_2
-        -:  194:    {
-        -:  195:      typedef __typeof__(_Tp2() + _Up2()) __type;
-        -:  196:    };
-        -:  197:
-        -:  198:  template<typename _Tp, typename _Up, typename _Vp,
-        -:  199:           typename _Tp2 = typename __promote<_Tp>::__type,
-        -:  200:           typename _Up2 = typename __promote<_Up>::__type,
-        -:  201:           typename _Vp2 = typename __promote<_Vp>::__type>
-        -:  202:    struct __promote_3
-        -:  203:    {
-        -:  204:      typedef __typeof__(_Tp2() + _Up2() + _Vp2()) __type;
-        -:  205:    };
-        -:  206:
-        -:  207:  template<typename _Tp, typename _Up, typename _Vp, typename _Wp,
-        -:  208:           typename _Tp2 = typename __promote<_Tp>::__type,
-        -:  209:           typename _Up2 = typename __promote<_Up>::__type,
-        -:  210:           typename _Vp2 = typename __promote<_Vp>::__type,
-        -:  211:           typename _Wp2 = typename __promote<_Wp>::__type>
-        -:  212:    struct __promote_4
-        -:  213:    {
-        -:  214:      typedef __typeof__(_Tp2() + _Up2() + _Vp2() + _Wp2()) __type;
-        -:  215:    };
-        -:  216:
-        -:  217:_GLIBCXX_END_NAMESPACE_VERSION
-        -:  218:} // namespace
-        -:  219:} // extern "C++"
-        -:  220:
-        -:  221:#endif 
+        -:  166:  // For arithmetic promotions in <complex> and <cmath>
+        -:  167:
+        -:  168:  template<typename _Tp, bool = std::__is_integer<_Tp>::__value>
+        -:  169:    struct __promote
+        -:  170:    { typedef double __type; };
+        -:  171:
+        -:  172:  // No nested __type member for non-integer non-floating point types,
+        -:  173:  // allows this type to be used for SFINAE to constrain overloads in
+        -:  174:  // <cmath> and <complex> to only the intended types.
+        -:  175:  template<typename _Tp>
+        -:  176:    struct __promote<_Tp, false>
+        -:  177:    { };
+        -:  178:
+        -:  179:  template<>
+        -:  180:    struct __promote<long double>
+        -:  181:    { typedef long double __type; };
+        -:  182:
+        -:  183:  template<>
+        -:  184:    struct __promote<double>
+        -:  185:    { typedef double __type; };
+        -:  186:
+        -:  187:  template<>
+        -:  188:    struct __promote<float>
+        -:  189:    { typedef float __type; };
+        -:  190:
+        -:  191:#if __cpp_fold_expressions
+        -:  192:  template<typename... _Tp>
+        -:  193:    using __promoted_t = decltype((typename __promote<_Tp>::__type(0) + ...));
+        -:  194:#endif
+        -:  195:
+        -:  196:  template<typename _Tp, typename _Up,
+        -:  197:           typename _Tp2 = typename __promote<_Tp>::__type,
+        -:  198:           typename _Up2 = typename __promote<_Up>::__type>
+        -:  199:    struct __promote_2
+        -:  200:    {
+        -:  201:      typedef __typeof__(_Tp2() + _Up2()) __type;
+        -:  202:    };
+        -:  203:
+        -:  204:  template<typename _Tp, typename _Up, typename _Vp,
+        -:  205:           typename _Tp2 = typename __promote<_Tp>::__type,
+        -:  206:           typename _Up2 = typename __promote<_Up>::__type,
+        -:  207:           typename _Vp2 = typename __promote<_Vp>::__type>
+        -:  208:    struct __promote_3
+        -:  209:    {
+        -:  210:      typedef __typeof__(_Tp2() + _Up2() + _Vp2()) __type;
+        -:  211:    };
+        -:  212:
+        -:  213:  template<typename _Tp, typename _Up, typename _Vp, typename _Wp,
+        -:  214:           typename _Tp2 = typename __promote<_Tp>::__type,
+        -:  215:           typename _Up2 = typename __promote<_Up>::__type,
+        -:  216:           typename _Vp2 = typename __promote<_Vp>::__type,
+        -:  217:           typename _Wp2 = typename __promote<_Wp>::__type>
+        -:  218:    struct __promote_4
+        -:  219:    {
+        -:  220:      typedef __typeof__(_Tp2() + _Up2() + _Vp2() + _Wp2()) __type;
+        -:  221:    };
+        -:  222:
+        -:  223:_GLIBCXX_END_NAMESPACE_VERSION
+        -:  224:} // namespace
+        -:  225:} // extern "C++"
+        -:  226:
+        -:  227:#endif 

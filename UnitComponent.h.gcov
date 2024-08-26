@@ -8,13 +8,13 @@
         -:    7:    virtual void fight() = 0 ;
         -:    8:    virtual void add(UnitComponent* component) = 0 ;
         -:    9:    virtual void remove(UnitComponent* component) = 0 ;
-      21*:   10:    virtual ~UnitComponent() = default;
+      63*:   10:    virtual ~UnitComponent() = default;
 ------------------
 _ZN13UnitComponentD0Ev:
     #####:   10:    virtual ~UnitComponent() = default;
 ------------------
 _ZN13UnitComponentD2Ev:
-       21:   10:    virtual ~UnitComponent() = default;
+       63:   10:    virtual ~UnitComponent() = default;
 ------------------
 _ZN13UnitComponentD0Ev:
     #####:   10:    virtual ~UnitComponent() = default;

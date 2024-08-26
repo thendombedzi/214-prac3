@@ -161,7 +161,15 @@ int main(){
 
 
   
-  
+//   class Legion : public UnitComponent {
+//     private : 
+//         vector<UnitComponent*> children ;
+//     public :
+//         void move() override ;
+//         void fight() override ;
+//         void add(UnitComponent* component) override ;
+//         void remove(UnitComponent* component) override ;
+//         ~Legion()override;
    
  
 
@@ -203,6 +211,8 @@ int main(){
     // Create an array of LegionUnit pointers to hold various military units
     LegionUnit* units[9];
 
+
+
     // Create units using the WoodlandFactory
     units[0] = factories[0]->createInfantry();   
     units[1] = factories[0]->createCavalry();
@@ -224,6 +234,8 @@ int main(){
         units[i]->attack();
     }
 
+    
+
     // Clean up memory
     for (int i = 0; i < 9; i++) {
         delete units[i];
@@ -234,6 +246,7 @@ int main(){
     }
     delete[] factories;
 
+    cout << "Creating Infantry to test (add for composite pattern)";
     
     return 0;
 }

@@ -4,14 +4,14 @@
         -:    3:
         -:    4:using namespace std;
         -:    5:
-        2:    6:void Riverbank_C::move()
+        6:    6:void Riverbank_C::move()
         -:    7:{
-        2:    8:    Cavalry::move();
-        2:    9:    cout << "Riverbank Cavalry is moving on the battlefield."<<endl;
-        2:   10:}
+        6:    8:    Cavalry::move();
+        6:    9:    cout << "Riverbank Cavalry is moving on the battlefield."<<endl;
+        6:   10:}
         -:   11:
-        1:   12:void Riverbank_C::attack()
+        3:   12:void Riverbank_C::attack()
         -:   13:{
-        1:   14:    Cavalry::attack();
-        1:   15:    cout << "Riverbank Cavalry is engaging in combat."<<endl;
-        1:   16:}
+        3:   14:    Cavalry::attack();
+        3:   15:    cout << "Riverbank Cavalry is engaging in combat."<<endl;
+        3:   16:}

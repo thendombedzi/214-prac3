@@ -4,26 +4,26 @@
         -:    3:
         -:    4:using namespace std;
         -:    5:
-        2:    6:void OpenField_A::move()
+        6:    6:void OpenField_A::move()
         -:    7:{
-        2:    8:    Artillery::move();
-        2:    9:    cout << "Openfield Artillery is moving on the battlefield."<<endl;
-        2:   10:}
+        6:    8:    Artillery::move();
+        6:    9:    cout << "Openfield Artillery is moving on the battlefield."<<endl;
+        6:   10:}
         -:   11:
-        1:   12:void OpenField_A::attack()
+        3:   12:void OpenField_A::attack()
         -:   13:{
-        1:   14:    Artillery::attack();
-        1:   15:    cout << "Openfield Artillery is engaging in combat."<<endl;
-        1:   16:}
+        3:   14:    Artillery::attack();
+        3:   15:    cout << "Openfield Artillery is engaging in combat."<<endl;
+        3:   16:}
         -:   17:
-        4:   18:OpenField_A::~OpenField_A()
-        4:   19:{}
+       12:   18:OpenField_A::~OpenField_A()
+       12:   19:{}
 ------------------
 _ZN11OpenField_AD0Ev:
-        2:   18:OpenField_A::~OpenField_A()
-        2:   19:{}
+        6:   18:OpenField_A::~OpenField_A()
+        6:   19:{}
 ------------------
 _ZN11OpenField_AD2Ev:
-        2:   18:OpenField_A::~OpenField_A()
-        2:   19:{}
+        6:   18:OpenField_A::~OpenField_A()
+        6:   19:{}
 ------------------

@@ -11,7 +11,7 @@
         -:   10:    BattleStrategy* storedStrategy ;
         -:   11:
         -:   12:    public :
-        3:   13:    TacticalMemento(BattleStrategy* strategy = nullptr) : storedStrategy(strategy){};
+        9:   13:    TacticalMemento(BattleStrategy* strategy = nullptr) : storedStrategy(strategy){};
         -:   14:    void storeStrategy(BattleStrategy* strategy);
         -:   15:    BattleStrategy* getStoredStrategy() const;
         -:   16:    

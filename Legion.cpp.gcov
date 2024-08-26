@@ -15,9 +15,9 @@
         -:   14:    }
     #####:   15:}
         -:   16:
-        9:   17:void Legion::add(UnitComponent* child){
-        9:   18:    children.push_back(child);
-        9:   19:}
+       27:   17:void Legion::add(UnitComponent* child){
+       27:   18:    children.push_back(child);
+       27:   19:}
         -:   20:
     #####:   21:void Legion::remove(UnitComponent* child) {
     #####:   22:    for (auto it = children.begin(); it != children.end(); ++it) {
@@ -27,26 +27,26 @@
         -:   26:        }
         -:   27:    }
         -:   28:}
-        6:   29:Legion::~Legion()
+       18:   29:Legion::~Legion()
         -:   30:{
-       12:   31:    for (auto child : children) {
-        9:   32:            delete child; // Recursively delete children
+       36:   31:    for (auto child : children) {
+       27:   32:            delete child; 
         -:   33:        }
-        6:   34:}
+       18:   34:}
 ------------------
 _ZN6LegionD0Ev:
-        3:   29:Legion::~Legion()
+        9:   29:Legion::~Legion()
         -:   30:{
         -:   31:    for (auto child : children) {
-        -:   32:            delete child; // Recursively delete children
+        -:   32:            delete child; 
         -:   33:        }
-        3:   34:}
+        9:   34:}
 ------------------
 _ZN6LegionD2Ev:
-        3:   29:Legion::~Legion()
+        9:   29:Legion::~Legion()
         -:   30:{
-       12:   31:    for (auto child : children) {
-        9:   32:            delete child; // Recursively delete children
+       36:   31:    for (auto child : children) {
+       27:   32:            delete child; 
         -:   33:        }
-        3:   34:}
+        9:   34:}
 ------------------

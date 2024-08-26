@@ -31,123 +31,123 @@
         -:   30:#include "OpenFieldFactory.h"
         -:   31:
         -:   32:
-        1:   33:int main(){
+        3:   33:int main(){
         -:   34:
         -:   35:
         -:   36:// Create factories for different terrains
-        1:   37:    LegionFactory* riverbankFactory = new RiverbankFactory();
-        1:   38:    LegionFactory* woodlandFactory = new WoodlandFactory();
-        1:   39:    LegionFactory* openFieldFactory = new OpenFieldFactory();
+        3:   37:    LegionFactory* riverbankFactory = new RiverbankFactory();
+        3:   38:    LegionFactory* woodlandFactory = new WoodlandFactory();
+        3:   39:    LegionFactory* openFieldFactory = new OpenFieldFactory();
         -:   40:
         -:   41:    // Create a legion for each terrain
-        1:   42:    Legion* riverbankLegion = new Legion();
-        1:   43:    Legion* woodlandLegion = new Legion();
-        1:   44:    Legion* openFieldLegion = new Legion();
+        3:   42:    Legion* riverbankLegion = new Legion();
+        3:   43:    Legion* woodlandLegion = new Legion();
+        3:   44:    Legion* openFieldLegion = new Legion();
         -:   45:
         -:   46:    // Create units for each terrain
-        1:   47:    UnitComponent* riverbankInfantry = riverbankFactory->createInfantry();
-        1:   48:    UnitComponent* riverbankCavalry = riverbankFactory->createCavalry();
-        1:   49:    UnitComponent* riverbankArtillery = riverbankFactory->createArtillery();
+        3:   47:    UnitComponent* riverbankInfantry = riverbankFactory->createInfantry();
+        3:   48:    UnitComponent* riverbankCavalry = riverbankFactory->createCavalry();
+        3:   49:    UnitComponent* riverbankArtillery = riverbankFactory->createArtillery();
         -:   50:    
-        1:   51:    UnitComponent* woodlandInfantry = woodlandFactory->createInfantry();
-        1:   52:    UnitComponent* woodlandCavalry = woodlandFactory->createCavalry();
-        1:   53:    UnitComponent* woodlandArtillery = woodlandFactory->createArtillery();
+        3:   51:    UnitComponent* woodlandInfantry = woodlandFactory->createInfantry();
+        3:   52:    UnitComponent* woodlandCavalry = woodlandFactory->createCavalry();
+        3:   53:    UnitComponent* woodlandArtillery = woodlandFactory->createArtillery();
         -:   54:
-        1:   55:    UnitComponent* openFieldInfantry = openFieldFactory->createInfantry();
-        1:   56:    UnitComponent* openFieldCavalry = openFieldFactory->createCavalry();
-        1:   57:    UnitComponent* openFieldArtillery = openFieldFactory->createArtillery();
+        3:   55:    UnitComponent* openFieldInfantry = openFieldFactory->createInfantry();
+        3:   56:    UnitComponent* openFieldCavalry = openFieldFactory->createCavalry();
+        3:   57:    UnitComponent* openFieldArtillery = openFieldFactory->createArtillery();
         -:   58:   
         -:   59:    // Test 1
-        1:   60:    std::cout<<"**********************************\n";
+        3:   60:    std::cout<<"**********************************\n";
         -:   61:    // Add units to legions
-        1:   62:    riverbankLegion->add(riverbankInfantry);
-        1:   63:    riverbankLegion->add(riverbankCavalry);
-        1:   64:    riverbankLegion->add(riverbankArtillery);
+        3:   62:    riverbankLegion->add(riverbankInfantry);
+        3:   63:    riverbankLegion->add(riverbankCavalry);
+        3:   64:    riverbankLegion->add(riverbankArtillery);
         -:   65:
-        1:   66:    woodlandLegion->add(woodlandInfantry);
-        1:   67:    woodlandLegion->add(woodlandCavalry);
-        1:   68:    woodlandLegion->add(woodlandArtillery);
+        3:   66:    woodlandLegion->add(woodlandInfantry);
+        3:   67:    woodlandLegion->add(woodlandCavalry);
+        3:   68:    woodlandLegion->add(woodlandArtillery);
         -:   69:
-        1:   70:    openFieldLegion->add(openFieldInfantry);
-        1:   71:    openFieldLegion->add(openFieldCavalry);
-        1:   72:    openFieldLegion->add(openFieldArtillery);
+        3:   70:    openFieldLegion->add(openFieldInfantry);
+        3:   71:    openFieldLegion->add(openFieldCavalry);
+        3:   72:    openFieldLegion->add(openFieldArtillery);
         -:   73:
-        1:   74:    std::cout<<"**********************************\n";
+        3:   74:    std::cout<<"**********************************\n";
         -:   75:
         -:   76:   //testing
-        1:   77:    riverbankArtillery->move();
-        1:   78:    riverbankCavalry->move();
-        1:   79:    riverbankInfantry->move();
+        3:   77:    riverbankArtillery->move();
+        3:   78:    riverbankCavalry->move();
+        3:   79:    riverbankInfantry->move();
         -:   80:
-        1:   81:    woodlandArtillery->move();
-        1:   82:    woodlandCavalry->move();
-        1:   83:    woodlandInfantry->move();
+        3:   81:    woodlandArtillery->move();
+        3:   82:    woodlandCavalry->move();
+        3:   83:    woodlandInfantry->move();
         -:   84:
-        1:   85:    openFieldArtillery->move();
-        1:   86:    openFieldCavalry->move();
-        1:   87:    openFieldInfantry->move();
+        3:   85:    openFieldArtillery->move();
+        3:   86:    openFieldCavalry->move();
+        3:   87:    openFieldInfantry->move();
         -:   88:
-        1:   89:     riverbankArtillery->fight();
-        1:   90:    riverbankCavalry->fight();
-        1:   91:    riverbankInfantry->fight();
+        3:   89:     riverbankArtillery->fight();
+        3:   90:    riverbankCavalry->fight();
+        3:   91:    riverbankInfantry->fight();
         -:   92:
-        1:   93:    woodlandArtillery->fight();
-        1:   94:    woodlandCavalry->fight();
-        1:   95:    woodlandInfantry->fight();
+        3:   93:    woodlandArtillery->fight();
+        3:   94:    woodlandCavalry->fight();
+        3:   95:    woodlandInfantry->fight();
         -:   96:
-        1:   97:    openFieldArtillery->fight();
-        1:   98:    openFieldCavalry->fight();
-        1:   99:    openFieldInfantry->fight();
+        3:   97:    openFieldArtillery->fight();
+        3:   98:    openFieldCavalry->fight();
+        3:   99:    openFieldInfantry->fight();
         -:  100:
         -:  101:
         -:  102:    // Test 2
-        1:  103:    std::cout<<"**********************************\n";
+        3:  103:    std::cout<<"**********************************\n";
         -:  104:   // Create and set up strategies
-        1:  105:    TacticalCommand* tacticalCommand = new TacticalCommand();
+        3:  105:    TacticalCommand* tacticalCommand = new TacticalCommand();
         -:  106:
-        1:  107:    BattleStrategy* flankingStrategy = new Flanking();
-        1:  108:    BattleStrategy* fortificationStrategy = new Fortification();
-        1:  109:    BattleStrategy* ambushStrategy = new Ambush();
+        3:  107:    BattleStrategy* flankingStrategy = new Flanking();
+        3:  108:    BattleStrategy* fortificationStrategy = new Fortification();
+        3:  109:    BattleStrategy* ambushStrategy = new Ambush();
         -:  110:
-        1:  111:    TacticalPlanner* planner = new TacticalPlanner();
-        1:  112:    WarArchives* archives = new WarArchives();
+        3:  111:    TacticalPlanner* planner = new TacticalPlanner();
+        3:  112:    WarArchives* archives = new WarArchives();
         -:  113:
-        1:  114:    std::cout<<"**********************************\n";
+        3:  114:    std::cout<<"**********************************\n";
         -:  115:
         -:  116:
         -:  117:
         -:  118:     //test Memento
-        1:  119:    std::cout<<"**********************************\n";
-        1:  120:    std::cout<<"Testing Memento:\n";
+        3:  119:    std::cout<<"**********************************\n";
+        3:  120:    std::cout<<"Testing Memento:\n";
         -:  121:    // Save current strategies
-        1:  122:    TacticalMemento* flankingMemento = planner->createMemento();
-        1:  123:    flankingMemento->storeStrategy(flankingStrategy);
+        3:  122:    TacticalMemento* flankingMemento = planner->createMemento();
+        3:  123:    flankingMemento->storeStrategy(flankingStrategy);
         -:  124:
-        1:  125:    TacticalMemento* fortificationMemento = planner->createMemento();
-        1:  126:   fortificationMemento->storeStrategy(fortificationStrategy);
+        3:  125:    TacticalMemento* fortificationMemento = planner->createMemento();
+        3:  126:   fortificationMemento->storeStrategy(fortificationStrategy);
         -:  127:
-        1:  128:    TacticalMemento* ambushMemento = planner->createMemento();
-        1:  129:    ambushMemento->storeStrategy(ambushStrategy);
+        3:  128:    TacticalMemento* ambushMemento = planner->createMemento();
+        3:  129:    ambushMemento->storeStrategy(ambushStrategy);
         -:  130:
-        1:  131:    archives->addTacticalMemento(flankingMemento, "Flanking");
-        1:  132:    archives->addTacticalMemento(fortificationMemento, "Fortification");
-        1:  133:    archives->addTacticalMemento(ambushMemento, "Ambush");
+        3:  131:    archives->addTacticalMemento(flankingMemento, "Flanking");
+        3:  132:    archives->addTacticalMemento(fortificationMemento, "Fortification");
+        3:  133:    archives->addTacticalMemento(ambushMemento, "Ambush");
         -:  134:    
-        1:  135:    std::cout<<"**********************************\n";
+        3:  135:    std::cout<<"**********************************\n";
         -:  136:
         -:  137:
         -:  138:
         -:  139:    // Test 3
-        1:  140:    std::cout<<"**********************************\n";
+        3:  140:    std::cout<<"**********************************\n";
         -:  141:   // Set and execute different strategies
-        1:  142:    tacticalCommand->setStrategy(flankingStrategy);
-        1:  143:    tacticalCommand->executeStrategy();
+        3:  142:    tacticalCommand->setStrategy(flankingStrategy);
+        3:  143:    tacticalCommand->executeStrategy();
         -:  144:
-        1:  145:    tacticalCommand->setStrategy(fortificationStrategy);
-        1:  146:    tacticalCommand->executeStrategy();
+        3:  145:    tacticalCommand->setStrategy(fortificationStrategy);
+        3:  146:    tacticalCommand->executeStrategy();
         -:  147:
-        1:  148:    tacticalCommand->setStrategy(ambushStrategy);
-        1:  149:    tacticalCommand->executeStrategy();
+        3:  148:    tacticalCommand->setStrategy(ambushStrategy);
+        3:  149:    tacticalCommand->executeStrategy();
         -:  150:
         -:  151:    //Use mementos to restore and choose strategies
         -:  152:    // planner->restoreMemento(archives->getTacticalMemento("Flanking"));
@@ -158,7 +158,7 @@
         -:  157:    // tacticalCommand->setStrategy(ambushStrategy);
         -:  158:    // tacticalCommand->executeStrategy();
         -:  159:
-        1:  160:   std::cout<<"**********************************\n";
+        3:  160:   std::cout<<"**********************************\n";
         -:  161:
         -:  162:
         -:  163:  
@@ -173,22 +173,22 @@
         -:  172:    
         -:  173:
         -:  174://delete units
-        1:  175:     delete riverbankFactory;
-        1:  176:    delete woodlandFactory;
-        1:  177:    delete openFieldFactory;
-        1:  178:    delete riverbankLegion;
-        1:  179:    delete woodlandLegion;
-        1:  180:    delete openFieldLegion;
-        1:  181:    delete ambushMemento;
-        1:  182:    delete fortificationMemento;
-        1:  183:    delete flankingMemento;
+        3:  175:     delete riverbankFactory;
+        3:  176:    delete woodlandFactory;
+        3:  177:    delete openFieldFactory;
+        3:  178:    delete riverbankLegion;
+        3:  179:    delete woodlandLegion;
+        3:  180:    delete openFieldLegion;
+        3:  181:    delete ambushMemento;
+        3:  182:    delete fortificationMemento;
+        3:  183:    delete flankingMemento;
         -:  184:    
-        1:  185:    delete flankingStrategy;
-        1:  186:    delete fortificationStrategy;
-        1:  187:    delete ambushStrategy;
-        1:  188:    delete planner;
-        1:  189:     delete archives;
-        1:  190:    delete tacticalCommand;
+        3:  185:    delete flankingStrategy;
+        3:  186:    delete fortificationStrategy;
+        3:  187:    delete ambushStrategy;
+        3:  188:    delete planner;
+        3:  189:     delete archives;
+        3:  190:    delete tacticalCommand;
         -:  191:    
         -:  192:
         -:  193:    
@@ -196,47 +196,47 @@
         -:  195:    
         -:  196:    //example 2:
         -:  197:
-        1:  198:     LegionFactory** factories = new LegionFactory*[3];
-        1:  199:    factories[0] = new WoodlandFactory();
-        1:  200:    factories[1] = new RiverbankFactory();
-        1:  201:    factories[2] = new OpenFieldFactory();
+        3:  198:     LegionFactory** factories = new LegionFactory*[3];
+        3:  199:    factories[0] = new WoodlandFactory();
+        3:  200:    factories[1] = new RiverbankFactory();
+        3:  201:    factories[2] = new OpenFieldFactory();
         -:  202:
         -:  203:    // Create an array of LegionUnit pointers to hold various military units
         -:  204:    LegionUnit* units[9];
         -:  205:
         -:  206:    // Create units using the WoodlandFactory
-       1*:  207:    units[0] = factories[0]->createInfantry();   
-       1*:  208:    units[1] = factories[0]->createCavalry();
-       1*:  209:    units[2] = factories[0]->createArtillery();
+       3*:  207:    units[0] = factories[0]->createInfantry();   
+       3*:  208:    units[1] = factories[0]->createCavalry();
+       3*:  209:    units[2] = factories[0]->createArtillery();
         -:  210:
         -:  211:    // Create units using the RiverbankFactory
-       1*:  212:    units[3] = factories[1]->createInfantry();   
-       1*:  213:    units[4] = factories[1]->createCavalry();
-       1*:  214:    units[5] = factories[1]->createArtillery();
+       3*:  212:    units[3] = factories[1]->createInfantry();   
+       3*:  213:    units[4] = factories[1]->createCavalry();
+       3*:  214:    units[5] = factories[1]->createArtillery();
         -:  215:
         -:  216:    // Create units using the OpenFieldFactory
-       1*:  217:    units[6] = factories[2]->createInfantry();   
-       1*:  218:    units[7] = factories[2]->createCavalry();
-       1*:  219:    units[8] = factories[2]->createArtillery();
+       3*:  217:    units[6] = factories[2]->createInfantry();   
+       3*:  218:    units[7] = factories[2]->createCavalry();
+       3*:  219:    units[8] = factories[2]->createArtillery();
         -:  220:
         -:  221:    // Perform actions with each unit
-       10:  222:    for (int i = 0; i < 9; i++) {
-        9:  223:        units[i]->move();
-        9:  224:        units[i]->attack();
+       30:  222:    for (int i = 0; i < 9; i++) {
+       27:  223:        units[i]->move();
+       27:  224:        units[i]->attack();
         -:  225:    }
         -:  226:
         -:  227:    // Clean up memory
-       10:  228:    for (int i = 0; i < 9; i++) {
-        9:  229:        delete units[i];
+       30:  228:    for (int i = 0; i < 9; i++) {
+       27:  229:        delete units[i];
         -:  230:    }
         -:  231:
-        4:  232:    for (int i = 0; i < 3; i++) {
-        3:  233:        delete factories[i];
+       12:  232:    for (int i = 0; i < 3; i++) {
+        9:  233:        delete factories[i];
         -:  234:    }
-        1:  235:    delete[] factories;
+        3:  235:    delete[] factories;
         -:  236:
         -:  237:    
-        1:  238:    return 0;
+        3:  238:    return 0;
         -:  239:}
         -:  240:
         -:  241:
