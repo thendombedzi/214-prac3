@@ -17,8 +17,10 @@ TacticalPlanner::~TacticalPlanner(){
 }
 
 void TacticalPlanner::setStrategy(BattleStrategy* newStrategy){
-    delete currentStrategy;
-    currentStrategy = newStrategy ;
+     if (currentStrategy) {
+        delete currentStrategy;  
+        currentStrategy = nullptr;  }
+    currentStrategy = newStrategy;
 }
 BattleStrategy* TacticalPlanner::getCurrentStrategy() const {
         return currentStrategy;

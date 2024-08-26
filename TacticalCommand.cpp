@@ -4,8 +4,12 @@
 
 void TacticalCommand::setStrategy(BattleStrategy* s) 
 {
+     if (!planner) {
+        
+        return;
+     }
     if(strategy){
-        strategy = nullptr ;
+        delete strategy;
     }
     this->strategy = s;
     planner->setStrategy(s);

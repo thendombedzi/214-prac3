@@ -14,3 +14,8 @@ Flanking::~Flanking()
 string Flanking::getStrategyLabel() const{
       return StrategyLabel;
 }
+
+void Flanking::setStrategyLabel(string Label)
+{
+      StrategyLabel = Label ;
+}

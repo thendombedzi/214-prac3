@@ -30,15 +30,13 @@
 #include "OpenFieldFactory.h"
 
 
-int main(){
+int main() {
 
 
-// Create factories for different terrains
+    // Create factories for different terrains
     LegionFactory* riverbankFactory = new RiverbankFactory();
     LegionFactory* woodlandFactory = new WoodlandFactory();
     LegionFactory* openFieldFactory = new OpenFieldFactory();
-
-    
 
     // Create a legion for each terrain
     Legion* riverbankLegion = new Legion();
@@ -49,7 +47,7 @@ int main(){
     UnitComponent* riverbankInfantry = riverbankFactory->createInfantry();
     UnitComponent* riverbankCavalry = riverbankFactory->createCavalry();
     UnitComponent* riverbankArtillery = riverbankFactory->createArtillery();
-    
+
     UnitComponent* woodlandInfantry = woodlandFactory->createInfantry();
     UnitComponent* woodlandCavalry = woodlandFactory->createCavalry();
     UnitComponent* woodlandArtillery = woodlandFactory->createArtillery();
@@ -57,25 +55,35 @@ int main(){
     UnitComponent* openFieldInfantry = openFieldFactory->createInfantry();
     UnitComponent* openFieldCavalry = openFieldFactory->createCavalry();
     UnitComponent* openFieldArtillery = openFieldFactory->createArtillery();
-   
-    // Test 1
-    std::cout<<"**********************************\n";
-    // Add units to legions
+
+    std::cout<<std::endl;
+    // Test 1: Composite Pattern
+    std::cout << "**********************************\n";
+    std::cout << "Testing Composite Pattern:\n";
+    std::cout << "**********************************\n";
+
+    std::cout << "Adding Legion of terrain Riverbank : ";
     riverbankLegion->add(riverbankInfantry);
     riverbankLegion->add(riverbankCavalry);
     riverbankLegion->add(riverbankArtillery);
+    std::cout << "DONE"<<std::endl;
 
+    std::cout << "Adding Legion of terrain Riverbank : ";
     woodlandLegion->add(woodlandInfantry);
     woodlandLegion->add(woodlandCavalry);
     woodlandLegion->add(woodlandArtillery);
+    std::cout << "DONE"<<std::endl;
 
+    std::cout << "Adding Legion of terrain Riverbank : ";
     openFieldLegion->add(openFieldInfantry);
     openFieldLegion->add(openFieldCavalry);
     openFieldLegion->add(openFieldArtillery);
+    std::cout << "DONE"<<std::endl;
+    
+    std::cout<<std::endl;
 
-    std::cout<<"**********************************\n";
-
-   //testing
+    std::cout << "/////////UNITS MOVING/////////"<<std::endl;
+    std::cout<<std::endl;
     riverbankArtillery->move();
     riverbankCavalry->move();
     riverbankInfantry->move();
@@ -88,7 +96,12 @@ int main(){
     openFieldCavalry->move();
     openFieldInfantry->move();
 
-     riverbankArtillery->fight();
+    std::cout<<std::endl;
+
+    std::cout << "/////////UNITS FIGHTING/////////"<<std::endl;
+    std::cout<<std::endl;
+
+    riverbankArtillery->fight();
     riverbankCavalry->fight();
     riverbankInfantry->fight();
 
@@ -100,50 +113,20 @@ int main(){
     openFieldCavalry->fight();
     openFieldInfantry->fight();
 
+    std::cout << "**********************************\n";
+    std::cout<<std::endl;
 
-    // Test 2
-    std::cout<<"**********************************\n";
-   // Create and set up strategies
+    // Test 2: Strategy Pattern
+    std::cout << "**********************************\n";
+    std::cout << "Testing Strategy Pattern:\n";
+    std::cout << "**********************************\n";
     TacticalCommand* tacticalCommand = new TacticalCommand();
 
     BattleStrategy* flankingStrategy = new Flanking();
     BattleStrategy* fortificationStrategy = new Fortification();
     BattleStrategy* ambushStrategy = new Ambush();
 
-    TacticalPlanner* planner = new TacticalPlanner();
-    WarArchives* archives = new WarArchives();
-
-    std::cout<<"**********************************\n";
-
-
-
-     //test Memento
-    std::cout<<"**********************************\n";
-    std::cout<<"Testing Memento:\n";
-    // Save current strategies
-    TacticalMemento* flankingMemento = planner->createMemento();
-    flankingMemento->storeStrategy(flankingStrategy);
-
-    TacticalMemento* fortificationMemento = planner->createMemento();
-   fortificationMemento->storeStrategy(fortificationStrategy);
-
-    TacticalMemento* ambushMemento = planner->createMemento();
-    ambushMemento->storeStrategy(ambushStrategy);
-
-    archives->addTacticalMemento(flankingMemento, "Flanking");
-    archives->addTacticalMemento(fortificationMemento, "Fortification");
-    archives->addTacticalMemento(ambushMemento, "Ambush");
-    
-    planner->getCurrentStrategy();
-   
-    std::cout<<"**********************************\n";
-    // 
-
-
-
-    // Test 3
-    std::cout<<"**********************************\n";
-   // Set and execute different strategies
+    std::cout << "/////////SETTING AND EXECUTING OF STRATEGIES/////////"<<std::endl;
     tacticalCommand->setStrategy(flankingStrategy);
     tacticalCommand->executeStrategy();
 
@@ -153,83 +136,70 @@ int main(){
     tacticalCommand->setStrategy(ambushStrategy);
     tacticalCommand->executeStrategy();
 
-    // Use mementos to restore and choose strategies
+    std::cout << "**********************************\n";
+
+    // Test 3: Memento Pattern
+    std::cout << "**********************************\n";
+    std::cout << "Testing Memento Pattern:\n";
+    std::cout << "**********************************\n";
+
+    TacticalPlanner* planner = new TacticalPlanner();
+    WarArchives* archives = new WarArchives();
+   
+    TacticalMemento* flankingMemento = planner->createMemento();
+    flankingMemento->storeStrategy(flankingStrategy);
+
+    TacticalMemento* fortificationMemento = planner->createMemento();
+    fortificationMemento->storeStrategy(fortificationStrategy);
+
+    TacticalMemento* ambushMemento = planner->createMemento();
+    ambushMemento->storeStrategy(ambushStrategy);
+
+    archives->addTacticalMemento(flankingMemento, "Flanking");
+    archives->addTacticalMemento(fortificationMemento, "Fortification");
+    archives->addTacticalMemento(ambushMemento, "Ambush");
+
     BattleStrategy* restoredStrategy = archives->getTacticalMemento("Flanking")->getStoredStrategy();
     if (restoredStrategy) {
-        cout << "123456789123456789123456789" << endl ;
         tacticalCommand->setStrategy(restoredStrategy);
         tacticalCommand->executeStrategy();
     } else {
         std::cerr << "Error: Restored strategy is invalid!" << std::endl;
     }
 
-    archives->removeTacticalMemento("Flanking");
-    archives->removeTacticalMemento("Fortification");
-    // planner->restoreMemento(archives->getTacticalMemento("Ambush"));
-    // tacticalCommand->setStrategy(ambushStrategy);
-    // tacticalCommand->executeStrategy();
+    std::cout << "**********************************\n";
 
-   std::cout<<"**********************************\n";
-
-
-//delete units
-    delete riverbankFactory;
-    delete woodlandFactory;
-    delete openFieldFactory;
-    delete riverbankLegion;
-    delete woodlandLegion;
-    delete openFieldLegion;
-    delete ambushMemento;
-    delete fortificationMemento;
-    delete flankingMemento;
-    
-    delete flankingStrategy;
-    delete fortificationStrategy;
-    delete ambushStrategy;
-    delete planner;
-     delete archives;
-    delete tacticalCommand;
-    
-
-    
-
-    
-    //example 2:
-
+    // Test 4: Abstract Factory Pattern
+    std::cout << "**********************************\n";
+    std::cout << "Testing Abstract Factory Pattern:\n";
+    std::cout << "**********************************\n";
     LegionFactory** factories = new LegionFactory*[3];
     factories[0] = new WoodlandFactory();
     factories[1] = new RiverbankFactory();
     factories[2] = new OpenFieldFactory();
 
-    // Create an array of LegionUnit pointers to hold various military units
     LegionUnit* units[9];
-
-
-
-    // Create units using the WoodlandFactory
-    units[0] = factories[0]->createInfantry();   
+    std::cout<<std::endl;
+std::cout << "/////////CREATING UNITS/////////"<<std::endl;
+    units[0] = factories[0]->createInfantry();
     units[1] = factories[0]->createCavalry();
     units[2] = factories[0]->createArtillery();
 
-    // Create units using the RiverbankFactory
-    units[3] = factories[1]->createInfantry();   
+    units[3] = factories[1]->createInfantry();
     units[4] = factories[1]->createCavalry();
     units[5] = factories[1]->createArtillery();
 
-    // Create units using the OpenFieldFactory
-    units[6] = factories[2]->createInfantry();   
+    units[6] = factories[2]->createInfantry();
     units[7] = factories[2]->createCavalry();
     units[8] = factories[2]->createArtillery();
-
-    // Perform actions with each unit
+   
+   std::cout<<std::endl;
+std::cout << "/////////UNITS MOVING AND ATTACKING/////////"<<std::endl;
     for (int i = 0; i < 9; i++) {
         units[i]->move();
         units[i]->attack();
     }
 
-    
-
-    // Clean up memory
     for (int i = 0; i < 9; i++) {
         delete units[i];
     }
@@ -239,56 +209,27 @@ int main(){
     }
     delete[] factories;
 
-    cout << "Creating Units of Infantry to test Composite pattern :" << endl ;
-    
-    OpenFieldFactory* newOpenFieldFactory = new OpenFieldFactory();
-    RiverbankFactory* newRiverBankFactory = new RiverbankFactory();
-    WoodlandFactory* newWoodlandFactory = new WoodlandFactory();
+    std::cout << "**********************************\n";
+    std::cout<<std::endl;
 
-    Infantry* newInfantry[5];
-    Cavalry* newCavalry[5];
-    Artillery* newArtillery[5];
+    // Clean up
+    std::cout << "/////////DELETION/////////"<<std::endl;
+    delete riverbankFactory;
+    delete woodlandFactory;
+    delete openFieldFactory;
+    delete riverbankLegion;
+    delete woodlandLegion;
+    delete openFieldLegion;
+    delete ambushMemento;
+    delete fortificationMemento;
+    delete flankingMemento;
 
-    Legion newLegion;
-    for(int i = 0 ; i < 5 ; i++){
-        newInfantry[i] = newOpenFieldFactory->createInfantry();
-        newCavalry[i] = newOpenFieldFactory->createCavalry();
-        newArtillery[i] = newOpenFieldFactory->createArtillery();
+    delete flankingStrategy;
+    delete fortificationStrategy;
+    delete ambushStrategy;
+    delete planner;
+    delete archives;
+    delete tacticalCommand;
 
-        newInfantry[i]->add(newInfantry[i]);
-        newCavalry[i]->add(newCavalry[i]);
-        newArtillery[i]->add(newArtillery[i]);
-
-        newCavalry[i]->remove(newCavalry[i]);
-        newInfantry[i]->remove(newInfantry[i]);
-        newArtillery[i]->remove(newArtillery[i]);
-
-        newLegion.add(newInfantry[i]);
-        newLegion.add(newCavalry[i]);
-        newLegion.add(newArtillery[i]);
-    }
-
-    newLegion.fight();
-    newLegion.move();
-    cout << "Legion size before remove : " ;
-    cout << newLegion.getSize() << endl;
-    newLegion.remove(newInfantry[0]);
-    cout << "Legion size after remove : " 
-    << newLegion.getSize() << endl ; 
-
-   
-    cout << "Testing the deploy strategies : ";
-
-    newOpenFieldFactory->deployArtillery();
-    newRiverBankFactory->deployArtillery();
-    newWoodlandFactory->deployArtillery();
-
-    delete newRiverBankFactory ;
-    delete newOpenFieldFactory ;
-    delete newWoodlandFactory ;
-
-    
-    
     return 0;
 }
-
