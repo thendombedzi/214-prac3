@@ -134,6 +134,8 @@ int main(){
     archives->addTacticalMemento(fortificationMemento, "Fortification");
     archives->addTacticalMemento(ambushMemento, "Ambush");
     
+    planner->getCurrentStrategy();
+   
     std::cout<<"**********************************\n";
     // 
 
@@ -160,6 +162,9 @@ int main(){
     } else {
         std::cerr << "Error: Restored strategy is invalid!" << std::endl;
     }
+
+    archives->removeTacticalMemento("Flanking");
+    archives->removeTacticalMemento("Fortification");
     // planner->restoreMemento(archives->getTacticalMemento("Ambush"));
     // tacticalCommand->setStrategy(ambushStrategy);
     // tacticalCommand->executeStrategy();
