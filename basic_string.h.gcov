@@ -531,24 +531,24 @@
         -:  530:      // 3076. basic_string CTAD ambiguity
         -:  531:      template<typename = _RequireAllocator<_Alloc>>
         -:  532:#endif
-       9*:  533:      basic_string(const _CharT* __s, const _Alloc& __a = _Alloc())
-       9*:  534:      : _M_dataplus(_M_local_data(), __a)
+       4*:  533:      basic_string(const _CharT* __s, const _Alloc& __a = _Alloc())
+       4*:  534:      : _M_dataplus(_M_local_data(), __a)
         -:  535:      {
-       9*:  536:	const _CharT* __end = __s ? __s + traits_type::length(__s)
+       4*:  536:	const _CharT* __end = __s ? __s + traits_type::length(__s)
         -:  537:	  // We just need a non-null pointer here to get an exception:
         -:  538:	  : reinterpret_cast<const _CharT*>(__alignof__(_CharT));
-       9*:  539:	_M_construct(__s, __end, random_access_iterator_tag());
-       9*:  540:      }
+       4*:  539:	_M_construct(__s, __end, random_access_iterator_tag());
+       4*:  540:      }
 ------------------
 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEC2IS3_EEPKcRKS3_:
-        9:  533:      basic_string(const _CharT* __s, const _Alloc& __a = _Alloc())
-        9:  534:      : _M_dataplus(_M_local_data(), __a)
+        4:  533:      basic_string(const _CharT* __s, const _Alloc& __a = _Alloc())
+        4:  534:      : _M_dataplus(_M_local_data(), __a)
         -:  535:      {
-       9*:  536:	const _CharT* __end = __s ? __s + traits_type::length(__s)
+       4*:  536:	const _CharT* __end = __s ? __s + traits_type::length(__s)
         -:  537:	  // We just need a non-null pointer here to get an exception:
         -:  538:	  : reinterpret_cast<const _CharT*>(__alignof__(_CharT));
-        9:  539:	_M_construct(__s, __end, random_access_iterator_tag());
-        9:  540:      }
+        4:  539:	_M_construct(__s, __end, random_access_iterator_tag());
+        4:  540:      }
 ------------------
 _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEC2IS3_EEPKcRKS3_:
     #####:  533:      basic_string(const _CharT* __s, const _Alloc& __a = _Alloc())
@@ -6253,11 +6253,11 @@ _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEC2IS3_EEPKcRKS3_:
         -: 6231:  template<typename _CharT>
         -: 6232:    inline
         -: 6233:    typename __gnu_cxx::__enable_if<__is_char<_CharT>::__value, bool>::__type
-    #####: 6234:    operator==(const basic_string<_CharT>& __lhs,
+        1: 6234:    operator==(const basic_string<_CharT>& __lhs,
         -: 6235:	       const basic_string<_CharT>& __rhs) _GLIBCXX_NOEXCEPT
-    #####: 6236:    { return (__lhs.size() == __rhs.size()
-    #####: 6237:	      && !std::char_traits<_CharT>::compare(__lhs.data(), __rhs.data(),
-    #####: 6238:						    __lhs.size())); }
+        1: 6236:    { return (__lhs.size() == __rhs.size()
+       1*: 6237:	      && !std::char_traits<_CharT>::compare(__lhs.data(), __rhs.data(),
+        1: 6238:						    __lhs.size())); }
         -: 6239:
         -: 6240:  /**
         -: 6241:   *  @brief  Test equivalence of string and C string.

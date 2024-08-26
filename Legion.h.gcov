@@ -1,0 +1,30 @@
+        -:    0:Source:Legion.h
+        -:    1:#ifndef LEGION_H
+        -:    2:#define LEGION_H
+        -:    3:
+        -:    4:#include "UnitComponent.h"
+        -:    5:#include <iostream>
+        -:    6:#include <vector>
+        -:    7:#include <algorithm>
+        -:    8:
+        -:    9:using namespace std ;
+        -:   10:
+        -:   11:// Composite  
+        -:   12:class Legion : public UnitComponent {
+        -:   13:    private : 
+        -:   14:        vector<UnitComponent*> children ;
+        -:   15:    public :
+        2:   16:        int getSize(){
+        2:   17:            int count = 0 ;
+       31:   18:            for(UnitComponent* child : children)
+       29:   19:                ++count;
+        2:   20:            return count ;
+        -:   21:        }
+        -:   22:        void move() override ;
+        -:   23:        void fight() override ;
+        -:   24:        void add(UnitComponent* component) override ;
+        -:   25:        void remove(UnitComponent* component) override ;
+        -:   26:        ~Legion()override;
+        -:   27:};
+        -:   28:
+        -:   29:#endif

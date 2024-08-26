@@ -558,12 +558,12 @@
         -:  557:  template<typename _Iterator>
         -:  558:    _GLIBCXX20_CONSTEXPR
         -:  559:    inline _Iterator
-    #####:  560:    __miter_base(_Iterator __it)
-    #####:  561:    { return __it; }
+       2*:  560:    __miter_base(_Iterator __it)
+       2*:  561:    { return __it; }
 ------------------
 _ZSt12__miter_baseIN9__gnu_cxx17__normal_iteratorIPP13UnitComponentSt6vectorIS3_SaIS3_EEEEET_S9_:
-    #####:  560:    __miter_base(_Iterator __it)
-    #####:  561:    { return __it; }
+        2:  560:    __miter_base(_Iterator __it)
+        2:  561:    { return __it; }
 ------------------
 _ZSt12__miter_baseIN9__gnu_cxx17__normal_iteratorIPN11WarArchives4PairESt6vectorIS3_SaIS3_EEEEET_S9_:
     #####:  560:    __miter_base(_Iterator __it)

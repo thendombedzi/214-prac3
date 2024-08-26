@@ -3,24 +3,24 @@
         -:    2:#include "Flanking.h"
         -:    3:using namespace std;
         -:    4:
-        3:    5:void Flanking::engage() 
+        2:    5:void Flanking::engage() 
         -:    6:{
-        3:    7:   cout << "Implementing the Flanking's engage()" << endl;
-        3:    8:}
-        6:    9:Flanking::~Flanking()
+        2:    7:   cout << "Implementing the Flanking's engage()" << endl;
+        2:    8:}
+        2:    9:Flanking::~Flanking()
         -:   10:{
-        3:   11:      cout << "Flanking deleting" << endl;
-        6:   12:}
+        1:   11:      cout << "Flanking deleting" << endl;
+        2:   12:}
 ------------------
 _ZN8FlankingD0Ev:
-        3:    9:Flanking::~Flanking()
+        1:    9:Flanking::~Flanking()
         -:   10:{
         -:   11:      cout << "Flanking deleting" << endl;
-        3:   12:}
+        1:   12:}
 ------------------
 _ZN8FlankingD2Ev:
-        3:    9:Flanking::~Flanking()
+        1:    9:Flanking::~Flanking()
         -:   10:{
-        3:   11:      cout << "Flanking deleting" << endl;
-        3:   12:}
+        1:   11:      cout << "Flanking deleting" << endl;
+        1:   12:}
 ------------------

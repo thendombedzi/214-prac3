@@ -47,8 +47,8 @@
         -:   46:   */
         -:   47:  template<typename _Tp>
         -:   48:    inline _GLIBCXX_CONSTEXPR _Tp*
-       36:   49:    __addressof(_Tp& __r) _GLIBCXX_NOEXCEPT
-       36:   50:    { return __builtin_addressof(__r); }
+       12:   49:    __addressof(_Tp& __r) _GLIBCXX_NOEXCEPT
+       12:   50:    { return __builtin_addressof(__r); }
         -:   51:
         -:   52:#if __cplusplus >= 201103L
         -:   53:
@@ -75,24 +75,24 @@
         -:   74:  template<typename _Tp>
         -:   75:    _GLIBCXX_NODISCARD
         -:   76:    constexpr _Tp&&
-      171:   77:    forward(typename std::remove_reference<_Tp>::type& __t) noexcept
-      171:   78:    { return static_cast<_Tp&&>(__t); }
+       92:   77:    forward(typename std::remove_reference<_Tp>::type& __t) noexcept
+       92:   78:    { return static_cast<_Tp&&>(__t); }
 ------------------
 _ZSt7forwardIRKP13UnitComponentEOT_RNSt16remove_referenceIS4_E4typeE:
-       81:   77:    forward(typename std::remove_reference<_Tp>::type& __t) noexcept
-       81:   78:    { return static_cast<_Tp&&>(__t); }
+       62:   77:    forward(typename std::remove_reference<_Tp>::type& __t) noexcept
+       62:   78:    { return static_cast<_Tp&&>(__t); }
 ------------------
 _ZSt7forwardIN11WarArchives4PairEEOT_RNSt16remove_referenceIS2_E4typeE:
-       18:   77:    forward(typename std::remove_reference<_Tp>::type& __t) noexcept
-       18:   78:    { return static_cast<_Tp&&>(__t); }
+        6:   77:    forward(typename std::remove_reference<_Tp>::type& __t) noexcept
+        6:   78:    { return static_cast<_Tp&&>(__t); }
 ------------------
 _ZSt7forwardIRP15TacticalMementoEOT_RNSt16remove_referenceIS3_E4typeE:
-       36:   77:    forward(typename std::remove_reference<_Tp>::type& __t) noexcept
-       36:   78:    { return static_cast<_Tp&&>(__t); }
+       12:   77:    forward(typename std::remove_reference<_Tp>::type& __t) noexcept
+       12:   78:    { return static_cast<_Tp&&>(__t); }
 ------------------
 _ZSt7forwardIRNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEOT_RNSt16remove_referenceIS7_E4typeE:
-       36:   77:    forward(typename std::remove_reference<_Tp>::type& __t) noexcept
-       36:   78:    { return static_cast<_Tp&&>(__t); }
+       12:   77:    forward(typename std::remove_reference<_Tp>::type& __t) noexcept
+       12:   78:    { return static_cast<_Tp&&>(__t); }
 ------------------
         -:   79:
         -:   80:  /**
@@ -119,12 +119,12 @@ _ZSt7forwardIRNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEOT_RNSt16remo
         -:  101:  template<typename _Tp>
         -:  102:    _GLIBCXX_NODISCARD
         -:  103:    constexpr typename std::remove_reference<_Tp>::type&&
-       9*:  104:    move(_Tp&& __t) noexcept
-       9*:  105:    { return static_cast<typename std::remove_reference<_Tp>::type&&>(__t); }
+       3*:  104:    move(_Tp&& __t) noexcept
+       3*:  105:    { return static_cast<typename std::remove_reference<_Tp>::type&&>(__t); }
 ------------------
 _ZSt4moveIRN11WarArchives4PairEEONSt16remove_referenceIT_E4typeEOS4_:
-        9:  104:    move(_Tp&& __t) noexcept
-        9:  105:    { return static_cast<typename std::remove_reference<_Tp>::type&&>(__t); }
+        3:  104:    move(_Tp&& __t) noexcept
+        3:  105:    { return static_cast<typename std::remove_reference<_Tp>::type&&>(__t); }
 ------------------
 _ZSt4moveIRZN11WarArchives21removeTacticalMementoENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEUlRKNS0_4PairEE_EONSt16remove_referenceIT_E4typeEOSD_:
     #####:  104:    move(_Tp&& __t) noexcept

@@ -5,14 +5,14 @@
         -:    4:
         -:    5:using namespace std;
         -:    6:
-       9*:    7:BattleStrategy::~BattleStrategy() 
-       9*:    8:{ }
+       3*:    7:BattleStrategy::~BattleStrategy() 
+       3*:    8:{ }
 ------------------
 _ZN14BattleStrategyD0Ev:
     #####:    7:BattleStrategy::~BattleStrategy() 
     #####:    8:{ }
 ------------------
 _ZN14BattleStrategyD2Ev:
-        9:    7:BattleStrategy::~BattleStrategy() 
-        9:    8:{ }
+        3:    7:BattleStrategy::~BattleStrategy() 
+        3:    8:{ }
 ------------------

@@ -38,6 +38,8 @@ int main(){
     LegionFactory* woodlandFactory = new WoodlandFactory();
     LegionFactory* openFieldFactory = new OpenFieldFactory();
 
+    
+
     // Create a legion for each terrain
     Legion* riverbankLegion = new Legion();
     Legion* woodlandLegion = new Legion();
@@ -133,6 +135,7 @@ int main(){
     archives->addTacticalMemento(ambushMemento, "Ambush");
     
     std::cout<<"**********************************\n";
+    // 
 
 
 
@@ -148,11 +151,15 @@ int main(){
     tacticalCommand->setStrategy(ambushStrategy);
     tacticalCommand->executeStrategy();
 
-    //Use mementos to restore and choose strategies
-    // planner->restoreMemento(archives->getTacticalMemento("Flanking"));
-    // tacticalCommand->setStrategy(flankingStrategy);
-    // tacticalCommand->executeStrategy();
-
+    // Use mementos to restore and choose strategies
+    BattleStrategy* restoredStrategy = archives->getTacticalMemento("Flanking")->getStoredStrategy();
+    if (restoredStrategy) {
+        cout << "123456789123456789123456789" << endl ;
+        tacticalCommand->setStrategy(restoredStrategy);
+        tacticalCommand->executeStrategy();
+    } else {
+        std::cerr << "Error: Restored strategy is invalid!" << std::endl;
+    }
     // planner->restoreMemento(archives->getTacticalMemento("Ambush"));
     // tacticalCommand->setStrategy(ambushStrategy);
     // tacticalCommand->executeStrategy();
@@ -160,27 +167,8 @@ int main(){
    std::cout<<"**********************************\n";
 
 
-  
-//   class Legion : public UnitComponent {
-//     private : 
-//         vector<UnitComponent*> children ;
-//     public :
-//         void move() override ;
-//         void fight() override ;
-//         void add(UnitComponent* component) override ;
-//         void remove(UnitComponent* component) override ;
-//         ~Legion()override;
-   
- 
-
-
-    
-
-
-    
-
 //delete units
-     delete riverbankFactory;
+    delete riverbankFactory;
     delete woodlandFactory;
     delete openFieldFactory;
     delete riverbankLegion;
@@ -203,7 +191,7 @@ int main(){
     
     //example 2:
 
-     LegionFactory** factories = new LegionFactory*[3];
+    LegionFactory** factories = new LegionFactory*[3];
     factories[0] = new WoodlandFactory();
     factories[1] = new RiverbankFactory();
     factories[2] = new OpenFieldFactory();
@@ -246,9 +234,56 @@ int main(){
     }
     delete[] factories;
 
-    cout << "Creating Infantry to test (add for composite pattern)";
+    cout << "Creating Units of Infantry to test Composite pattern :" << endl ;
+    
+    OpenFieldFactory* newOpenFieldFactory = new OpenFieldFactory();
+    RiverbankFactory* newRiverBankFactory = new RiverbankFactory();
+    WoodlandFactory* newWoodlandFactory = new WoodlandFactory();
+
+    Infantry* newInfantry[5];
+    Cavalry* newCavalry[5];
+    Artillery* newArtillery[5];
+
+    Legion newLegion;
+    for(int i = 0 ; i < 5 ; i++){
+        newInfantry[i] = newOpenFieldFactory->createInfantry();
+        newCavalry[i] = newOpenFieldFactory->createCavalry();
+        newArtillery[i] = newOpenFieldFactory->createArtillery();
+
+        newInfantry[i]->add(newInfantry[i]);
+        newCavalry[i]->add(newCavalry[i]);
+        newArtillery[i]->add(newArtillery[i]);
+
+        newCavalry[i]->remove(newCavalry[i]);
+        newInfantry[i]->remove(newInfantry[i]);
+        newArtillery[i]->remove(newArtillery[i]);
+
+        newLegion.add(newInfantry[i]);
+        newLegion.add(newCavalry[i]);
+        newLegion.add(newArtillery[i]);
+    }
+
+    newLegion.fight();
+    newLegion.move();
+    cout << "Legion size before remove : " ;
+    cout << newLegion.getSize() << endl;
+    newLegion.remove(newInfantry[0]);
+    cout << "Legion size after remove : " 
+    << newLegion.getSize() << endl ; 
+
+   
+    cout << "Testing the deploy strategies : ";
+
+    newOpenFieldFactory->deployArtillery();
+    newRiverBankFactory->deployArtillery();
+    newWoodlandFactory->deployArtillery();
+
+    delete newRiverBankFactory ;
+    delete newOpenFieldFactory ;
+    delete newWoodlandFactory ;
+
+    
     
     return 0;
 }
-
 

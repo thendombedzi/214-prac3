@@ -3,24 +3,24 @@
         -:    2:#include "Fortification.h"
         -:    3:using namespace std ;
         -:    4:
-        3:    5:void Fortification::engage() 
+        1:    5:void Fortification::engage() 
         -:    6:{
-        3:    7:   cout << "Implementing the Fortification's engage()" << endl;
-        3:    8:}
-        6:    9:Fortification::~Fortification()
+        1:    7:   cout << "Implementing the Fortification's engage()" << endl;
+        1:    8:}
+        2:    9:Fortification::~Fortification()
         -:   10:{
-        3:   11:      cout << "Fortification deleting" << endl;
-        6:   12:}
+        1:   11:      cout << "Fortification deleting" << endl;
+        2:   12:}
 ------------------
 _ZN13FortificationD0Ev:
-        3:    9:Fortification::~Fortification()
+        1:    9:Fortification::~Fortification()
         -:   10:{
         -:   11:      cout << "Fortification deleting" << endl;
-        3:   12:}
+        1:   12:}
 ------------------
 _ZN13FortificationD2Ev:
-        3:    9:Fortification::~Fortification()
+        1:    9:Fortification::~Fortification()
         -:   10:{
-        3:   11:      cout << "Fortification deleting" << endl;
-        3:   12:}
+        1:   11:      cout << "Fortification deleting" << endl;
+        1:   12:}
 ------------------

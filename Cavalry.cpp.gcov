@@ -5,36 +5,36 @@
         -:    4:#include "Cavalry.h"
         -:    5:
         -:    6:
-       18:    7:void Cavalry::move()
+       11:    7:void Cavalry::move()
         -:    8:{
-       18:    9:    cout << "Cavalry is moving on the battlefield."<<endl;
-       18:   10:}
+       11:    9:    cout << "Cavalry is moving on the battlefield."<<endl;
+       11:   10:}
         -:   11:
-        9:   12:void Cavalry::attack()
+        3:   12:void Cavalry::attack()
         -:   13:{
-        9:   14:    cout << "Cavalry is engaging in combat."<<endl;  
-        9:   15:}
+        3:   14:    cout << "Cavalry is engaging in combat."<<endl;  
+        3:   15:}
         -:   16:
-        9:   17:void Cavalry::fight(){
-        9:   18:    cout << "Cavalry attacking the enemy ." << endl ;
-        9:   19:}
+        8:   17:void Cavalry::fight(){
+        8:   18:    cout << "Cavalry attacking the enemy ." << endl ;
+        8:   19:}
         -:   20:
-    #####:   21:void Cavalry::add(UnitComponent* component)  {
-    #####:   22:        std::cout << "Cannot add to leaf unit." << std::endl;
-    #####:   23:    }
+        5:   21:void Cavalry::add(UnitComponent* component)  {
+        5:   22:        std::cout << "Cannot add to leaf unit." << std::endl;
+        5:   23:    }
         -:   24:
-    #####:   25:void Cavalry :: remove(UnitComponent* component)  {
-    #####:   26:        std::cout << "Cannot remove from leaf unit." << std::endl;
-    #####:   27:    }
-      18*:   28:Cavalry::~Cavalry()
-      18*:   29:{}
+        5:   25:void Cavalry :: remove(UnitComponent* component)  {
+        5:   26:        std::cout << "Cannot remove from leaf unit." << std::endl;
+        5:   27:    }
+      11*:   28:Cavalry::~Cavalry()
+      11*:   29:{}
 ------------------
 _ZN7CavalryD0Ev:
     #####:   28:Cavalry::~Cavalry()
     #####:   29:{}
 ------------------
 _ZN7CavalryD2Ev:
-       18:   28:Cavalry::~Cavalry()
-       18:   29:{}
+       11:   28:Cavalry::~Cavalry()
+       11:   29:{}
 ------------------
         -:   30:

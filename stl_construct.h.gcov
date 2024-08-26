@@ -144,25 +144,25 @@
         -:  143:   */
         -:  144:  template<typename _Tp>
         -:  145:    _GLIBCXX14_CONSTEXPR inline void
-        9:  146:    _Destroy(_Tp* __pointer)
+        3:  146:    _Destroy(_Tp* __pointer)
         -:  147:    {
         -:  148:#if __cplusplus > 201703L
         -:  149:      std::destroy_at(__pointer);
         -:  150:#else
-        9:  151:      __pointer->~_Tp();
+        3:  151:      __pointer->~_Tp();
         -:  152:#endif
-        9:  153:    }
+        3:  153:    }
         -:  154:
         -:  155:  template<bool>
         -:  156:    struct _Destroy_aux
         -:  157:    {
         -:  158:      template<typename _ForwardIterator>
         -:  159:	static _GLIBCXX20_CONSTEXPR void
-        3:  160:	__destroy(_ForwardIterator __first, _ForwardIterator __last)
+        1:  160:	__destroy(_ForwardIterator __first, _ForwardIterator __last)
         -:  161:	{
-       12:  162:	  for (; __first != __last; ++__first)
-        9:  163:	    std::_Destroy(std::__addressof(*__first));
-        3:  164:	}
+        4:  162:	  for (; __first != __last; ++__first)
+        3:  163:	    std::_Destroy(std::__addressof(*__first));
+        1:  164:	}
         -:  165:    };
         -:  166:
         -:  167:  template<>
@@ -170,13 +170,13 @@
         -:  169:    {
         -:  170:      template<typename _ForwardIterator>
         -:  171:        static void
-       12:  172:        __destroy(_ForwardIterator, _ForwardIterator) { }
+        5:  172:        __destroy(_ForwardIterator, _ForwardIterator) { }
 ------------------
 _ZNSt12_Destroy_auxILb1EE9__destroyIPP13UnitComponentEEvT_S5_:
-        9:  172:        __destroy(_ForwardIterator, _ForwardIterator) { }
+        4:  172:        __destroy(_ForwardIterator, _ForwardIterator) { }
 ------------------
 _ZNSt12_Destroy_auxILb1EE9__destroyIPP10LegionUnitEEvT_S5_:
-        3:  172:        __destroy(_ForwardIterator, _ForwardIterator) { }
+        1:  172:        __destroy(_ForwardIterator, _ForwardIterator) { }
 ------------------
         -:  173:    };
         -:  174:
@@ -187,7 +187,7 @@ _ZNSt12_Destroy_auxILb1EE9__destroyIPP10LegionUnitEEvT_S5_:
         -:  179:   */
         -:  180:  template<typename _ForwardIterator>
         -:  181:    _GLIBCXX20_CONSTEXPR inline void
-       15:  182:    _Destroy(_ForwardIterator __first, _ForwardIterator __last)
+        6:  182:    _Destroy(_ForwardIterator __first, _ForwardIterator __last)
         -:  183:    {
         -:  184:      typedef typename iterator_traits<_ForwardIterator>::value_type
         -:  185:                       _Value_type;
@@ -201,11 +201,11 @@ _ZNSt12_Destroy_auxILb1EE9__destroyIPP10LegionUnitEEvT_S5_:
         -:  193:	return _Destroy_aux<false>::__destroy(__first, __last);
         -:  194:#endif
         -:  195:      std::_Destroy_aux<__has_trivial_destructor(_Value_type)>::
-       15:  196:	__destroy(__first, __last);
-       15:  197:    }
+        6:  196:	__destroy(__first, __last);
+        6:  197:    }
 ------------------
 _ZSt8_DestroyIPP13UnitComponentEvT_S3_:
-        9:  182:    _Destroy(_ForwardIterator __first, _ForwardIterator __last)
+        4:  182:    _Destroy(_ForwardIterator __first, _ForwardIterator __last)
         -:  183:    {
         -:  184:      typedef typename iterator_traits<_ForwardIterator>::value_type
         -:  185:                       _Value_type;
@@ -219,11 +219,11 @@ _ZSt8_DestroyIPP13UnitComponentEvT_S3_:
         -:  193:	return _Destroy_aux<false>::__destroy(__first, __last);
         -:  194:#endif
         -:  195:      std::_Destroy_aux<__has_trivial_destructor(_Value_type)>::
-        9:  196:	__destroy(__first, __last);
-        9:  197:    }
+        4:  196:	__destroy(__first, __last);
+        4:  197:    }
 ------------------
 _ZSt8_DestroyIPP10LegionUnitEvT_S3_:
-        3:  182:    _Destroy(_ForwardIterator __first, _ForwardIterator __last)
+        1:  182:    _Destroy(_ForwardIterator __first, _ForwardIterator __last)
         -:  183:    {
         -:  184:      typedef typename iterator_traits<_ForwardIterator>::value_type
         -:  185:                       _Value_type;
@@ -237,11 +237,11 @@ _ZSt8_DestroyIPP10LegionUnitEvT_S3_:
         -:  193:	return _Destroy_aux<false>::__destroy(__first, __last);
         -:  194:#endif
         -:  195:      std::_Destroy_aux<__has_trivial_destructor(_Value_type)>::
-        3:  196:	__destroy(__first, __last);
-        3:  197:    }
+        1:  196:	__destroy(__first, __last);
+        1:  197:    }
 ------------------
 _ZSt8_DestroyIPN11WarArchives4PairEEvT_S3_:
-        3:  182:    _Destroy(_ForwardIterator __first, _ForwardIterator __last)
+        1:  182:    _Destroy(_ForwardIterator __first, _ForwardIterator __last)
         -:  183:    {
         -:  184:      typedef typename iterator_traits<_ForwardIterator>::value_type
         -:  185:                       _Value_type;
@@ -255,8 +255,8 @@ _ZSt8_DestroyIPN11WarArchives4PairEEvT_S3_:
         -:  193:	return _Destroy_aux<false>::__destroy(__first, __last);
         -:  194:#endif
         -:  195:      std::_Destroy_aux<__has_trivial_destructor(_Value_type)>::
-        3:  196:	__destroy(__first, __last);
-        3:  197:    }
+        1:  196:	__destroy(__first, __last);
+        1:  197:    }
 ------------------
         -:  198:
         -:  199:  template<bool>

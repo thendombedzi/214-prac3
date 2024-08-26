@@ -5,15 +5,10 @@ TacticalMemento* TacticalPlanner::createMemento(){
 }
 
 void TacticalPlanner::restoreMemento(TacticalMemento* memento){
-    if(memento == nullptr){
-        cout << "No Memento was passed into arguments " << endl ;
-        return ;
-    }
-
-        delete currentStrategy ;
     
-
-    currentStrategy = memento->getStoredStrategy();
+    if(memento){
+        currentStrategy = memento->getStoredStrategy();
+    }
 }
  
 TacticalPlanner::~TacticalPlanner(){

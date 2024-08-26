@@ -9,33 +9,33 @@
         -:    8:#include "OpenField_A.h" // Header file for OpenField_A"
         -:    9:
         -:   10:// Implementing Infantry creation method
-        6:   11:Infantry* OpenFieldFactory::createInfantry() {
-        6:   12:    return new OpenField_I();  // Ensure OpenField_I is a concrete class
+        7:   11:Infantry* OpenFieldFactory::createInfantry() {
+        7:   12:    return new OpenField_I();  // Ensure OpenField_I is a concrete class
         -:   13:}
         -:   14:
         -:   15:// Implementing Cavalry creation method
-        6:   16:Cavalry* OpenFieldFactory::createCavalry() {
-        6:   17:    return new OpenField_C();  // Ensure OpenField_C is a concrete class
+        7:   16:Cavalry* OpenFieldFactory::createCavalry() {
+        7:   17:    return new OpenField_C();  // Ensure OpenField_C is a concrete class
         -:   18:}
         -:   19:
         -:   20:// Implementing Artillery creation method
-        6:   21:Artillery* OpenFieldFactory::createArtillery() {
-        6:   22:    return new OpenField_A();  // Ensure OpenField_A is a concrete class
+        7:   21:Artillery* OpenFieldFactory::createArtillery() {
+        7:   22:    return new OpenField_A();  // Ensure OpenField_A is a concrete class
         -:   23:}
         -:   24:
-    #####:   25: void OpenFieldFactory::deployArtillery()
+        1:   25: void OpenFieldFactory::deployArtillery()
         -:   26: {
-    #####:   27:     cout << "Deploying Openfield Factory siege engines for terrain challenges" << endl;
-    #####:   28: }
+        1:   27:     cout << "Deploying Openfield Factory siege engines for terrain challenges" << endl;
+        1:   28: }
         -:   29:
-       12:   30: OpenFieldFactory::~OpenFieldFactory()
-       12:   31: {}
+        6:   30: OpenFieldFactory::~OpenFieldFactory()
+        6:   31: {}
 ------------------
 _ZN16OpenFieldFactoryD0Ev:
-        6:   30: OpenFieldFactory::~OpenFieldFactory()
-        6:   31: {}
+        3:   30: OpenFieldFactory::~OpenFieldFactory()
+        3:   31: {}
 ------------------
 _ZN16OpenFieldFactoryD2Ev:
-        6:   30: OpenFieldFactory::~OpenFieldFactory()
-        6:   31: {}
+        3:   30: OpenFieldFactory::~OpenFieldFactory()
+        3:   31: {}
 ------------------

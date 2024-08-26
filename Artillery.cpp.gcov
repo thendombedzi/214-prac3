@@ -5,34 +5,34 @@
         -:    4:#include "Artillery.h"
         -:    5:
         -:    6:
-       18:    7:void Artillery::move()
+       11:    7:void Artillery::move()
         -:    8:{
-       18:    9:     cout << "Artillery is moving on the battlefield."<<endl;
-       18:   10:}
+       11:    9:     cout << "Artillery is moving on the battlefield."<<endl;
+       11:   10:}
         -:   11:
-        9:   12:void Artillery::attack()
+        3:   12:void Artillery::attack()
         -:   13:{
-        9:   14:    cout << "Artillery is engaging in combat."<<endl;
-        9:   15:}
-        9:   16:void Artillery::fight(){
-        9:   17:    cout << "Artillery firing ." << endl ;
-        9:   18:}
-    #####:   19:void Artillery::add(UnitComponent* component) {
-    #####:   20:        std::cout << "Cannot add to leaf unit." << std::endl;
-    #####:   21:    }
+        3:   14:    cout << "Artillery is engaging in combat."<<endl;
+        3:   15:}
+        8:   16:void Artillery::fight(){
+        8:   17:    cout << "Artillery firing ." << endl ;
+        8:   18:}
+        5:   19:void Artillery::add(UnitComponent* component) {
+        5:   20:        std::cout << "Cannot add to leaf unit." << std::endl;
+        5:   21:    }
         -:   22:
-    #####:   23:void Artillery :: remove(UnitComponent* component)  {
-    #####:   24:        std::cout << "Cannot remove from leaf unit." << std::endl;
-    #####:   25:    }
+        5:   23:void Artillery :: remove(UnitComponent* component)  {
+        5:   24:        std::cout << "Cannot remove from leaf unit." << std::endl;
+        5:   25:    }
         -:   26:
-      18*:   27:Artillery::~Artillery()
-      18*:   28:{}
+      11*:   27:Artillery::~Artillery()
+      11*:   28:{}
 ------------------
 _ZN9ArtilleryD0Ev:
     #####:   27:Artillery::~Artillery()
     #####:   28:{}
 ------------------
 _ZN9ArtilleryD2Ev:
-       18:   27:Artillery::~Artillery()
-       18:   28:{}
+       11:   27:Artillery::~Artillery()
+       11:   28:{}
 ------------------

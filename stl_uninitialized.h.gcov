@@ -984,7 +984,7 @@
         -:  983:
         -:  984:  template<typename _Tp, typename _Up, typename _Allocator>
         -:  985:    inline void
-        9:  986:    __relocate_object_a(_Tp* __restrict __dest, _Up* __restrict __orig,
+        3:  986:    __relocate_object_a(_Tp* __restrict __dest, _Up* __restrict __orig,
         -:  987:			_Allocator& __alloc)
         -:  988:    noexcept(noexcept(std::allocator_traits<_Allocator>::construct(__alloc,
         -:  989:			 __dest, std::move(*__orig)))
@@ -992,9 +992,9 @@
         -:  991:			    __alloc, std::__addressof(*__orig))))
         -:  992:    {
         -:  993:      typedef std::allocator_traits<_Allocator> __traits;
-        9:  994:      __traits::construct(__alloc, __dest, std::move(*__orig));
-        9:  995:      __traits::destroy(__alloc, std::__addressof(*__orig));
-        9:  996:    }
+        3:  994:      __traits::construct(__alloc, __dest, std::move(*__orig));
+        3:  995:      __traits::destroy(__alloc, std::__addressof(*__orig));
+        3:  996:    }
         -:  997:
         -:  998:  // This class may be specialized for specific types.
         -:  999:  // Also known as is_trivially_relocatable.
@@ -1004,19 +1004,19 @@
         -: 1003:
         -: 1004:  template <typename _Tp, typename _Up>
         -: 1005:    inline __enable_if_t<std::__is_bitwise_relocatable<_Tp>::value, _Tp*>
-       54: 1006:    __relocate_a_1(_Tp* __first, _Tp* __last,
+       28: 1006:    __relocate_a_1(_Tp* __first, _Tp* __last,
         -: 1007:		   _Tp* __result, allocator<_Up>&) noexcept
         -: 1008:    {
-       54: 1009:      ptrdiff_t __count = __last - __first;
-       54: 1010:      if (__count > 0)
-       18: 1011:	__builtin_memmove(__result, __first, __count * sizeof(_Tp));
-       54: 1012:      return __result + __count;
+       28: 1009:      ptrdiff_t __count = __last - __first;
+       28: 1010:      if (__count > 0)
+       10: 1011:	__builtin_memmove(__result, __first, __count * sizeof(_Tp));
+       28: 1012:      return __result + __count;
         -: 1013:    }
         -: 1014:
         -: 1015:  template <typename _InputIterator, typename _ForwardIterator,
         -: 1016:	    typename _Allocator>
         -: 1017:    inline _ForwardIterator
-       18: 1018:    __relocate_a_1(_InputIterator __first, _InputIterator __last,
+        6: 1018:    __relocate_a_1(_InputIterator __first, _InputIterator __last,
         -: 1019:		   _ForwardIterator __result, _Allocator& __alloc)
         -: 1020:    noexcept(noexcept(std::__relocate_object_a(std::addressof(*__result),
         -: 1021:					       std::addressof(*__first),
@@ -1028,25 +1028,25 @@
         -: 1027:	_ValueType2;
         -: 1028:      static_assert(std::is_same<_ValueType, _ValueType2>::value,
         -: 1029:	  "relocation is only possible for values of the same type");
-       18: 1030:      _ForwardIterator __cur = __result;
-       27: 1031:      for (; __first != __last; ++__first, (void)++__cur)
-        9: 1032:	std::__relocate_object_a(std::__addressof(*__cur),
+        6: 1030:      _ForwardIterator __cur = __result;
+        9: 1031:      for (; __first != __last; ++__first, (void)++__cur)
+        3: 1032:	std::__relocate_object_a(std::__addressof(*__cur),
         -: 1033:				 std::__addressof(*__first), __alloc);
-       18: 1034:      return __cur;
+        6: 1034:      return __cur;
         -: 1035:    }
         -: 1036:
         -: 1037:  template <typename _InputIterator, typename _ForwardIterator,
         -: 1038:	    typename _Allocator>
         -: 1039:    inline _ForwardIterator
-       72: 1040:    __relocate_a(_InputIterator __first, _InputIterator __last,
+       34: 1040:    __relocate_a(_InputIterator __first, _InputIterator __last,
         -: 1041:		 _ForwardIterator __result, _Allocator& __alloc)
         -: 1042:    noexcept(noexcept(__relocate_a_1(std::__niter_base(__first),
         -: 1043:				     std::__niter_base(__last),
         -: 1044:				     std::__niter_base(__result), __alloc)))
         -: 1045:    {
-       72: 1046:      return __relocate_a_1(std::__niter_base(__first),
+       34: 1046:      return __relocate_a_1(std::__niter_base(__first),
         -: 1047:			    std::__niter_base(__last),
-       72: 1048:			    std::__niter_base(__result), __alloc);
+       34: 1048:			    std::__niter_base(__result), __alloc);
         -: 1049:    }
         -: 1050:
         -: 1051:  /// @endcond

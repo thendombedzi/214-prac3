@@ -1,32 +1,27 @@
         -:    0:Source:TacticalPlanner.cpp
         -:    1:#include "TacticalPlanner.h"
         -:    2:
-        9:    3:TacticalMemento* TacticalPlanner::createMemento(){
-        9:    4:    return new TacticalMemento(currentStrategy);
+        3:    3:TacticalMemento* TacticalPlanner::createMemento(){
+        3:    4:    return new TacticalMemento(currentStrategy);
         -:    5:}
         -:    6:
     #####:    7:void TacticalPlanner::restoreMemento(TacticalMemento* memento){
-    #####:    8:    if(memento == nullptr){
-    #####:    9:        cout << "No Memento was passed into arguments " << endl ;
-    #####:   10:        return ;
+        -:    8:    
+    #####:    9:    if(memento){
+    #####:   10:        currentStrategy = memento->getStoredStrategy();
         -:   11:    }
-        -:   12:
-    #####:   13:        delete currentStrategy ;
-        -:   14:    
-        -:   15:
-    #####:   16:    currentStrategy = memento->getStoredStrategy();
-        -:   17:}
-        -:   18: 
-        3:   19:TacticalPlanner::~TacticalPlanner(){
-       3*:   20:    delete currentStrategy ;
-        3:   21:    currentStrategy = nullptr ;
-        3:   22:}
-        -:   23:
-    #####:   24:void TacticalPlanner::setStrategy(BattleStrategy* newStrategy){
-    #####:   25:    delete currentStrategy;
-    #####:   26:    currentStrategy = newStrategy ;
-    #####:   27:}
-    #####:   28:BattleStrategy* TacticalPlanner::getCurrentStrategy() const {
-    #####:   29:        return currentStrategy;
-        -:   30:    }
-        -:   31:
+    #####:   12:}
+        -:   13: 
+        1:   14:TacticalPlanner::~TacticalPlanner(){
+       1*:   15:    delete currentStrategy ;
+        1:   16:    currentStrategy = nullptr ;
+        1:   17:}
+        -:   18:
+    #####:   19:void TacticalPlanner::setStrategy(BattleStrategy* newStrategy){
+    #####:   20:    delete currentStrategy;
+    #####:   21:    currentStrategy = newStrategy ;
+    #####:   22:}
+    #####:   23:BattleStrategy* TacticalPlanner::getCurrentStrategy() const {
+    #####:   24:        return currentStrategy;
+        -:   25:    }
+        -:   26:

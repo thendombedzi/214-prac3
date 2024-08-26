@@ -13,6 +13,12 @@ class Legion : public UnitComponent {
     private : 
         vector<UnitComponent*> children ;
     public :
+        int getSize(){
+            int count = 0 ;
+            for(UnitComponent* child : children)
+                ++count;
+            return count ;
+        }
         void move() override ;
         void fight() override ;
         void add(UnitComponent* component) override ;

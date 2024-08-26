@@ -2,14 +2,14 @@
         -:    1:#include <iostream>
         -:    2:#include "LegionUnit.h"
         -:    3:
-      54*:    4:LegionUnit::~LegionUnit()
-      54*:    5:{}
+      33*:    4:LegionUnit::~LegionUnit()
+      33*:    5:{}
 ------------------
 _ZN10LegionUnitD0Ev:
     #####:    4:LegionUnit::~LegionUnit()
     #####:    5:{}
 ------------------
 _ZN10LegionUnitD2Ev:
-       54:    4:LegionUnit::~LegionUnit()
-       54:    5:{}
+       33:    4:LegionUnit::~LegionUnit()
+       33:    5:{}
 ------------------

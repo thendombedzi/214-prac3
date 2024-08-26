@@ -17,7 +17,7 @@
         -:   16:            string key ;
         -:   17:            TacticalMemento* memento ;
         -:   18:
-        9:   19:            Pair(const std::string& key, TacticalMemento* memento) : key(key), memento(memento){}
+        3:   19:            Pair(const std::string& key, TacticalMemento* memento) : key(key), memento(memento){}
         -:   20:        };
         -:   21:        vector<Pair> mementoList ;
         -:   22:    public : 

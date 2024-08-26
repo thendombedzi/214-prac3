@@ -1025,45 +1025,49 @@
         -: 1024:      : _M_current(_Iterator()) { }
         -: 1025:
         -: 1026:      explicit _GLIBCXX20_CONSTEXPR
-     132*: 1027:      __normal_iterator(const _Iterator& __i) _GLIBCXX_NOEXCEPT
-     132*: 1028:      : _M_current(__i) { }
+      78*: 1027:      __normal_iterator(const _Iterator& __i) _GLIBCXX_NOEXCEPT
+      78*: 1028:      : _M_current(__i) { }
 ------------------
 _ZN9__gnu_cxx17__normal_iteratorIPKP13UnitComponentSt6vectorIS2_SaIS2_EEEC2ERKS4_:
-    #####: 1027:      __normal_iterator(const _Iterator& __i) _GLIBCXX_NOEXCEPT
-    #####: 1028:      : _M_current(__i) { }
+        1: 1027:      __normal_iterator(const _Iterator& __i) _GLIBCXX_NOEXCEPT
+        1: 1028:      : _M_current(__i) { }
 ------------------
 _ZN9__gnu_cxx17__normal_iteratorIPP13UnitComponentSt6vectorIS2_SaIS2_EEEC2ERKS3_:
-       72: 1027:      __normal_iterator(const _Iterator& __i) _GLIBCXX_NOEXCEPT
-       72: 1028:      : _M_current(__i) { }
+       53: 1027:      __normal_iterator(const _Iterator& __i) _GLIBCXX_NOEXCEPT
+       53: 1028:      : _M_current(__i) { }
 ------------------
 _ZN9__gnu_cxx17__normal_iteratorIPP10LegionUnitSt6vectorIS2_SaIS2_EEEC2ERKS3_:
-       24: 1027:      __normal_iterator(const _Iterator& __i) _GLIBCXX_NOEXCEPT
-       24: 1028:      : _M_current(__i) { }
+       10: 1027:      __normal_iterator(const _Iterator& __i) _GLIBCXX_NOEXCEPT
+       10: 1028:      : _M_current(__i) { }
 ------------------
-_ZN9__gnu_cxx17__normal_iteratorIPKN11WarArchives4PairESt6vectorIS2_SaIS2_EEEC2ERKS4_:
+_ZN9__gnu_cxx17__normal_iteratorIPP13UnitComponentSt6vectorIS2_SaIS2_EEEC2ERKS3_:
     #####: 1027:      __normal_iterator(const _Iterator& __i) _GLIBCXX_NOEXCEPT
     #####: 1028:      : _M_current(__i) { }
 ------------------
+_ZN9__gnu_cxx17__normal_iteratorIPKN11WarArchives4PairESt6vectorIS2_SaIS2_EEEC2ERKS4_:
+        2: 1027:      __normal_iterator(const _Iterator& __i) _GLIBCXX_NOEXCEPT
+        2: 1028:      : _M_current(__i) { }
+------------------
 _ZN9__gnu_cxx17__normal_iteratorIPN11WarArchives4PairESt6vectorIS2_SaIS2_EEEC2ERKS3_:
-       36: 1027:      __normal_iterator(const _Iterator& __i) _GLIBCXX_NOEXCEPT
-       36: 1028:      : _M_current(__i) { }
+       12: 1027:      __normal_iterator(const _Iterator& __i) _GLIBCXX_NOEXCEPT
+       12: 1028:      : _M_current(__i) { }
 ------------------
         -: 1029:
         -: 1030:      // Allow iterator to const_iterator conversion
         -: 1031:      template<typename _Iter>
         -: 1032:        _GLIBCXX20_CONSTEXPR
-    #####: 1033:        __normal_iterator(const __normal_iterator<_Iter,
+       1*: 1033:        __normal_iterator(const __normal_iterator<_Iter,
         -: 1034:			  typename __enable_if<
         -: 1035:      	       (std::__are_same<_Iter, typename _Container::pointer>::__value),
         -: 1036:		      _Container>::__type>& __i) _GLIBCXX_NOEXCEPT
-    #####: 1037:        : _M_current(__i.base()) { }
+       1*: 1037:        : _M_current(__i.base()) { }
 ------------------
 _ZN9__gnu_cxx17__normal_iteratorIPKP13UnitComponentSt6vectorIS2_SaIS2_EEEC2IPS2_EERKNS0_IT_NS_11__enable_ifIXsrSt10__are_sameISB_SA_E7__valueES7_E6__typeEEE:
-    #####: 1033:        __normal_iterator(const __normal_iterator<_Iter,
+        1: 1033:        __normal_iterator(const __normal_iterator<_Iter,
         -: 1034:			  typename __enable_if<
         -: 1035:      	       (std::__are_same<_Iter, typename _Container::pointer>::__value),
         -: 1036:		      _Container>::__type>& __i) _GLIBCXX_NOEXCEPT
-    #####: 1037:        : _M_current(__i.base()) { }
+        1: 1037:        : _M_current(__i.base()) { }
 ------------------
 _ZN9__gnu_cxx17__normal_iteratorIPKN11WarArchives4PairESt6vectorIS2_SaIS2_EEEC2IPS2_EERKNS0_IT_NS_11__enable_ifIXsrSt10__are_sameISB_SA_E7__valueES7_E6__typeEEE:
     #####: 1033:        __normal_iterator(const __normal_iterator<_Iter,
@@ -1076,24 +1080,28 @@ _ZN9__gnu_cxx17__normal_iteratorIPKN11WarArchives4PairESt6vectorIS2_SaIS2_EEEC2I
         -: 1039:      // Forward iterator requirements
         -: 1040:      _GLIBCXX20_CONSTEXPR
         -: 1041:      reference
-      36*: 1042:      operator*() const _GLIBCXX_NOEXCEPT
-      36*: 1043:      { return *_M_current; }
+      88*: 1042:      operator*() const _GLIBCXX_NOEXCEPT
+      88*: 1043:      { return *_M_current; }
 ------------------
 _ZNK9__gnu_cxx17__normal_iteratorIPP13UnitComponentSt6vectorIS2_SaIS2_EEEdeEv:
-       27: 1042:      operator*() const _GLIBCXX_NOEXCEPT
-       27: 1043:      { return *_M_current; }
+       84: 1042:      operator*() const _GLIBCXX_NOEXCEPT
+       84: 1043:      { return *_M_current; }
 ------------------
 _ZNK9__gnu_cxx17__normal_iteratorIPP10LegionUnitSt6vectorIS2_SaIS2_EEEdeEv:
     #####: 1042:      operator*() const _GLIBCXX_NOEXCEPT
     #####: 1043:      { return *_M_current; }
 ------------------
-_ZNK9__gnu_cxx17__normal_iteratorIPN11WarArchives4PairESt6vectorIS2_SaIS2_EEEdeEv:
-        9: 1042:      operator*() const _GLIBCXX_NOEXCEPT
-        9: 1043:      { return *_M_current; }
-------------------
-_ZNK9__gnu_cxx17__normal_iteratorIPKN11WarArchives4PairESt6vectorIS2_SaIS2_EEEdeEv:
+_ZNK9__gnu_cxx17__normal_iteratorIPP13UnitComponentSt6vectorIS2_SaIS2_EEEdeEv:
     #####: 1042:      operator*() const _GLIBCXX_NOEXCEPT
     #####: 1043:      { return *_M_current; }
+------------------
+_ZNK9__gnu_cxx17__normal_iteratorIPN11WarArchives4PairESt6vectorIS2_SaIS2_EEEdeEv:
+        3: 1042:      operator*() const _GLIBCXX_NOEXCEPT
+        3: 1043:      { return *_M_current; }
+------------------
+_ZNK9__gnu_cxx17__normal_iteratorIPKN11WarArchives4PairESt6vectorIS2_SaIS2_EEEdeEv:
+        1: 1042:      operator*() const _GLIBCXX_NOEXCEPT
+        1: 1043:      { return *_M_current; }
 ------------------
         -: 1044:
         -: 1045:      _GLIBCXX20_CONSTEXPR
@@ -1103,20 +1111,27 @@ _ZNK9__gnu_cxx17__normal_iteratorIPKN11WarArchives4PairESt6vectorIS2_SaIS2_EEEde
         -: 1049:
         -: 1050:      _GLIBCXX20_CONSTEXPR
         -: 1051:      __normal_iterator&
-      27*: 1052:      operator++() _GLIBCXX_NOEXCEPT
+      82*: 1052:      operator++() _GLIBCXX_NOEXCEPT
         -: 1053:      {
-      27*: 1054:	++_M_current;
-      27*: 1055:	return *this;
+      82*: 1054:	++_M_current;
+      82*: 1055:	return *this;
         -: 1056:      }
 ------------------
 _ZN9__gnu_cxx17__normal_iteratorIPP13UnitComponentSt6vectorIS2_SaIS2_EEEppEv:
-       27: 1052:      operator++() _GLIBCXX_NOEXCEPT
+       82: 1052:      operator++() _GLIBCXX_NOEXCEPT
         -: 1053:      {
-       27: 1054:	++_M_current;
-       27: 1055:	return *this;
+       82: 1054:	++_M_current;
+       82: 1055:	return *this;
         -: 1056:      }
 ------------------
 _ZN9__gnu_cxx17__normal_iteratorIPP10LegionUnitSt6vectorIS2_SaIS2_EEEppEv:
+    #####: 1052:      operator++() _GLIBCXX_NOEXCEPT
+        -: 1053:      {
+    #####: 1054:	++_M_current;
+    #####: 1055:	return *this;
+        -: 1056:      }
+------------------
+_ZN9__gnu_cxx17__normal_iteratorIPP13UnitComponentSt6vectorIS2_SaIS2_EEEppEv:
     #####: 1052:      operator++() _GLIBCXX_NOEXCEPT
         -: 1053:      {
     #####: 1054:	++_M_current;
@@ -1170,12 +1185,12 @@ _ZN9__gnu_cxx17__normal_iteratorIPKN11WarArchives4PairESt6vectorIS2_SaIS2_EEEppE
         -: 1087:
         -: 1088:      _GLIBCXX20_CONSTEXPR
         -: 1089:      __normal_iterator
-    #####: 1090:      operator+(difference_type __n) const _GLIBCXX_NOEXCEPT
-    #####: 1091:      { return __normal_iterator(_M_current + __n); }
+       4*: 1090:      operator+(difference_type __n) const _GLIBCXX_NOEXCEPT
+       4*: 1091:      { return __normal_iterator(_M_current + __n); }
 ------------------
 _ZNK9__gnu_cxx17__normal_iteratorIPP13UnitComponentSt6vectorIS2_SaIS2_EEEplEl:
-    #####: 1090:      operator+(difference_type __n) const _GLIBCXX_NOEXCEPT
-    #####: 1091:      { return __normal_iterator(_M_current + __n); }
+        4: 1090:      operator+(difference_type __n) const _GLIBCXX_NOEXCEPT
+        4: 1091:      { return __normal_iterator(_M_current + __n); }
 ------------------
 _ZNK9__gnu_cxx17__normal_iteratorIPN11WarArchives4PairESt6vectorIS2_SaIS2_EEEplEl:
     #####: 1090:      operator+(difference_type __n) const _GLIBCXX_NOEXCEPT
@@ -1189,33 +1204,37 @@ _ZNK9__gnu_cxx17__normal_iteratorIPN11WarArchives4PairESt6vectorIS2_SaIS2_EEEplE
         -: 1097:
         -: 1098:      _GLIBCXX20_CONSTEXPR
         -: 1099:      __normal_iterator
-        9: 1100:      operator-(difference_type __n) const _GLIBCXX_NOEXCEPT
-        9: 1101:      { return __normal_iterator(_M_current - __n); }
+        3: 1100:      operator-(difference_type __n) const _GLIBCXX_NOEXCEPT
+        3: 1101:      { return __normal_iterator(_M_current - __n); }
         -: 1102:
         -: 1103:      _GLIBCXX20_CONSTEXPR
         -: 1104:      const _Iterator&
-     240*: 1105:      base() const _GLIBCXX_NOEXCEPT
-     240*: 1106:      { return _M_current; }
+     271*: 1105:      base() const _GLIBCXX_NOEXCEPT
+     271*: 1106:      { return _M_current; }
 ------------------
 _ZNK9__gnu_cxx17__normal_iteratorIPKP13UnitComponentSt6vectorIS2_SaIS2_EEE4baseEv:
-    #####: 1105:      base() const _GLIBCXX_NOEXCEPT
-    #####: 1106:      { return _M_current; }
+        2: 1105:      base() const _GLIBCXX_NOEXCEPT
+        2: 1106:      { return _M_current; }
 ------------------
 _ZNK9__gnu_cxx17__normal_iteratorIPP13UnitComponentSt6vectorIS2_SaIS2_EEE4baseEv:
-      180: 1105:      base() const _GLIBCXX_NOEXCEPT
-      180: 1106:      { return _M_current; }
+      245: 1105:      base() const _GLIBCXX_NOEXCEPT
+      245: 1106:      { return _M_current; }
 ------------------
 _ZNK9__gnu_cxx17__normal_iteratorIPP10LegionUnitSt6vectorIS2_SaIS2_EEE4baseEv:
-       24: 1105:      base() const _GLIBCXX_NOEXCEPT
-       24: 1106:      { return _M_current; }
+       10: 1105:      base() const _GLIBCXX_NOEXCEPT
+       10: 1106:      { return _M_current; }
 ------------------
-_ZNK9__gnu_cxx17__normal_iteratorIPKN11WarArchives4PairESt6vectorIS2_SaIS2_EEE4baseEv:
+_ZNK9__gnu_cxx17__normal_iteratorIPP13UnitComponentSt6vectorIS2_SaIS2_EEE4baseEv:
     #####: 1105:      base() const _GLIBCXX_NOEXCEPT
     #####: 1106:      { return _M_current; }
 ------------------
+_ZNK9__gnu_cxx17__normal_iteratorIPKN11WarArchives4PairESt6vectorIS2_SaIS2_EEE4baseEv:
+        2: 1105:      base() const _GLIBCXX_NOEXCEPT
+        2: 1106:      { return _M_current; }
+------------------
 _ZNK9__gnu_cxx17__normal_iteratorIPN11WarArchives4PairESt6vectorIS2_SaIS2_EEE4baseEv:
-       36: 1105:      base() const _GLIBCXX_NOEXCEPT
-       36: 1106:      { return _M_current; }
+       12: 1105:      base() const _GLIBCXX_NOEXCEPT
+       12: 1106:      { return _M_current; }
 ------------------
         -: 1107:    };
         -: 1108:
@@ -1289,28 +1308,34 @@ _ZNK9__gnu_cxx17__normal_iteratorIPN11WarArchives4PairESt6vectorIS2_SaIS2_EEE4ba
         -: 1176:  template<typename _Iterator, typename _Container>
         -: 1177:    _GLIBCXX20_CONSTEXPR
         -: 1178:    inline bool
-      48*: 1179:    operator!=(const __normal_iterator<_Iterator, _Container>& __lhs,
+      98*: 1179:    operator!=(const __normal_iterator<_Iterator, _Container>& __lhs,
         -: 1180:	       const __normal_iterator<_Iterator, _Container>& __rhs)
         -: 1181:    _GLIBCXX_NOEXCEPT
-      48*: 1182:    { return __lhs.base() != __rhs.base(); }
+      98*: 1182:    { return __lhs.base() != __rhs.base(); }
 ------------------
 _ZN9__gnu_cxxneIPP13UnitComponentSt6vectorIS2_SaIS2_EEEEbRKNS_17__normal_iteratorIT_T0_EESC_:
-       36: 1179:    operator!=(const __normal_iterator<_Iterator, _Container>& __lhs,
+       92: 1179:    operator!=(const __normal_iterator<_Iterator, _Container>& __lhs,
         -: 1180:	       const __normal_iterator<_Iterator, _Container>& __rhs)
         -: 1181:    _GLIBCXX_NOEXCEPT
-       36: 1182:    { return __lhs.base() != __rhs.base(); }
+       92: 1182:    { return __lhs.base() != __rhs.base(); }
 ------------------
 _ZN9__gnu_cxxneIPP10LegionUnitSt6vectorIS2_SaIS2_EEEEbRKNS_17__normal_iteratorIT_T0_EESC_:
-       12: 1179:    operator!=(const __normal_iterator<_Iterator, _Container>& __lhs,
+        5: 1179:    operator!=(const __normal_iterator<_Iterator, _Container>& __lhs,
         -: 1180:	       const __normal_iterator<_Iterator, _Container>& __rhs)
         -: 1181:    _GLIBCXX_NOEXCEPT
-       12: 1182:    { return __lhs.base() != __rhs.base(); }
+        5: 1182:    { return __lhs.base() != __rhs.base(); }
 ------------------
-_ZN9__gnu_cxxneIPKN11WarArchives4PairESt6vectorIS2_SaIS2_EEEEbRKNS_17__normal_iteratorIT_T0_EESD_:
+_ZN9__gnu_cxxneIPP13UnitComponentSt6vectorIS2_SaIS2_EEEEbRKNS_17__normal_iteratorIT_T0_EESC_:
     #####: 1179:    operator!=(const __normal_iterator<_Iterator, _Container>& __lhs,
         -: 1180:	       const __normal_iterator<_Iterator, _Container>& __rhs)
         -: 1181:    _GLIBCXX_NOEXCEPT
     #####: 1182:    { return __lhs.base() != __rhs.base(); }
+------------------
+_ZN9__gnu_cxxneIPKN11WarArchives4PairESt6vectorIS2_SaIS2_EEEEbRKNS_17__normal_iteratorIT_T0_EESD_:
+        1: 1179:    operator!=(const __normal_iterator<_Iterator, _Container>& __lhs,
+        -: 1180:	       const __normal_iterator<_Iterator, _Container>& __rhs)
+        -: 1181:    _GLIBCXX_NOEXCEPT
+        1: 1182:    { return __lhs.base() != __rhs.base(); }
 ------------------
 _ZN9__gnu_cxxneIPN11WarArchives4PairESt6vectorIS2_SaIS2_EEEEbRKNS_17__normal_iteratorIT_T0_EESC_:
     #####: 1179:    operator!=(const __normal_iterator<_Iterator, _Container>& __lhs,
@@ -1403,28 +1428,28 @@ _ZN9__gnu_cxxneIPN11WarArchives4PairESt6vectorIS2_SaIS2_EEEEbRKNS_17__normal_ite
         -: 1265:  template<typename _Iterator, typename _Container>
         -: 1266:    _GLIBCXX20_CONSTEXPR
         -: 1267:    inline typename __normal_iterator<_Iterator, _Container>::difference_type
-      36*: 1268:    operator-(const __normal_iterator<_Iterator, _Container>& __lhs,
+      18*: 1268:    operator-(const __normal_iterator<_Iterator, _Container>& __lhs,
         -: 1269:	      const __normal_iterator<_Iterator, _Container>& __rhs)
         -: 1270:    _GLIBCXX_NOEXCEPT
-      36*: 1271:    { return __lhs.base() - __rhs.base(); }
+      18*: 1271:    { return __lhs.base() - __rhs.base(); }
 ------------------
 _ZN9__gnu_cxxmiIPP13UnitComponentSt6vectorIS2_SaIS2_EEEENS_17__normal_iteratorIT_T0_E15difference_typeERKSA_SD_:
-       27: 1268:    operator-(const __normal_iterator<_Iterator, _Container>& __lhs,
+       14: 1268:    operator-(const __normal_iterator<_Iterator, _Container>& __lhs,
         -: 1269:	      const __normal_iterator<_Iterator, _Container>& __rhs)
         -: 1270:    _GLIBCXX_NOEXCEPT
-       27: 1271:    { return __lhs.base() - __rhs.base(); }
+       14: 1271:    { return __lhs.base() - __rhs.base(); }
 ------------------
 _ZN9__gnu_cxxmiIPKP13UnitComponentSt6vectorIS2_SaIS2_EEEENS_17__normal_iteratorIT_T0_E15difference_typeERKSB_SE_:
-    #####: 1268:    operator-(const __normal_iterator<_Iterator, _Container>& __lhs,
+        1: 1268:    operator-(const __normal_iterator<_Iterator, _Container>& __lhs,
         -: 1269:	      const __normal_iterator<_Iterator, _Container>& __rhs)
         -: 1270:    _GLIBCXX_NOEXCEPT
-    #####: 1271:    { return __lhs.base() - __rhs.base(); }
+        1: 1271:    { return __lhs.base() - __rhs.base(); }
 ------------------
 _ZN9__gnu_cxxmiIPN11WarArchives4PairESt6vectorIS2_SaIS2_EEEENS_17__normal_iteratorIT_T0_E15difference_typeERKSA_SD_:
-        9: 1268:    operator-(const __normal_iterator<_Iterator, _Container>& __lhs,
+        3: 1268:    operator-(const __normal_iterator<_Iterator, _Container>& __lhs,
         -: 1269:	      const __normal_iterator<_Iterator, _Container>& __rhs)
         -: 1270:    _GLIBCXX_NOEXCEPT
-        9: 1271:    { return __lhs.base() - __rhs.base(); }
+        3: 1271:    { return __lhs.base() - __rhs.base(); }
 ------------------
 _ZN9__gnu_cxxmiIPKN11WarArchives4PairESt6vectorIS2_SaIS2_EEEENS_17__normal_iteratorIT_T0_E15difference_typeERKSB_SE_:
     #####: 1268:    operator-(const __normal_iterator<_Iterator, _Container>& __lhs,
@@ -1451,14 +1476,14 @@ _ZN9__gnu_cxxmiIPKN11WarArchives4PairESt6vectorIS2_SaIS2_EEEENS_17__normal_itera
         -: 1288:  template<typename _Iterator, typename _Container>
         -: 1289:    _GLIBCXX20_CONSTEXPR
         -: 1290:    _Iterator
-    #####: 1291:    __niter_base(__gnu_cxx::__normal_iterator<_Iterator, _Container> __it)
+       4*: 1291:    __niter_base(__gnu_cxx::__normal_iterator<_Iterator, _Container> __it)
         -: 1292:    _GLIBCXX_NOEXCEPT_IF(std::is_nothrow_copy_constructible<_Iterator>::value)
-    #####: 1293:    { return __it.base(); }
+       4*: 1293:    { return __it.base(); }
 ------------------
 _ZSt12__niter_baseIPP13UnitComponentSt6vectorIS1_SaIS1_EEET_N9__gnu_cxx17__normal_iteratorIS6_T0_EE:
-    #####: 1291:    __niter_base(__gnu_cxx::__normal_iterator<_Iterator, _Container> __it)
+        4: 1291:    __niter_base(__gnu_cxx::__normal_iterator<_Iterator, _Container> __it)
         -: 1292:    _GLIBCXX_NOEXCEPT_IF(std::is_nothrow_copy_constructible<_Iterator>::value)
-    #####: 1293:    { return __it.base(); }
+        4: 1293:    { return __it.base(); }
 ------------------
 _ZSt12__niter_baseIPN11WarArchives4PairESt6vectorIS1_SaIS1_EEET_N9__gnu_cxx17__normal_iteratorIS6_T0_EE:
     #####: 1291:    __niter_base(__gnu_cxx::__normal_iterator<_Iterator, _Container> __it)

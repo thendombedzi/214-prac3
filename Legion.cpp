@@ -21,6 +21,7 @@ void Legion::add(UnitComponent* child){
 void Legion::remove(UnitComponent* child) {
     for (auto it = children.begin(); it != children.end(); ++it) {
         if (*it == child) {
+            delete *it ;
             children.erase(it);
             return;  
         }
