@@ -7,8 +7,9 @@ class Ambush : public BattleStrategy {
     private :
         string StrategyLabel ;
     public:
-        virtual void engage() ;
+        virtual void engage() override ;
         string getStrategyLabel() const override ;
+        void setStrategyLabel(string Label) override ;
         ~Ambush() ;
 };
 

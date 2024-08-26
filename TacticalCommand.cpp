@@ -4,9 +4,12 @@
 
 void TacticalCommand::setStrategy(BattleStrategy* s) 
 {
+    if(strategy){
+        strategy = nullptr ;
+    }
     this->strategy = s;
     planner->setStrategy(s);
-    archives->addTacticalMemento(planner->createMemento(),"");/// saves the set strategy into the Tactical Planner
+    archives->addTacticalMemento(planner->createMemento(),s->getStrategyLabel());/// saves the set strategy into the Tactical Planner
 }
 
 void TacticalCommand::executeStrategy() 
@@ -18,6 +21,7 @@ void TacticalCommand::executeStrategy()
                 unit->move();
                 unit->attack();
             }
+        strategy->setStrategyLabel("last_successful");
     }
 }
 
@@ -34,11 +38,10 @@ void TacticalCommand::chooseBestStrategy()
 TacticalCommand::~TacticalCommand() 
 {
     cout << "Deleting strategy" << endl;
-    //delete strategy;
-    // delete planner;
-    // delete archives;
+    delete strategy ;
+    delete planner ;
+    delete archives ;
      for (LegionUnit* unit : units) {
         delete unit;
     }
-    //strategy = 0;
 }

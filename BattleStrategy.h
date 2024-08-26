@@ -11,6 +11,7 @@ class BattleStrategy{
     virtual void engage() = 0;
     virtual ~BattleStrategy();
     virtual string getStrategyLabel() const = 0 ;
+    virtual void setStrategyLabel(string Label) = 0 ;
 };
 
 #endif

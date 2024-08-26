@@ -7,8 +7,9 @@ class Flanking : public BattleStrategy {
     private :
         string StrategyLabel ;
     public:
-        virtual void engage() ;
+        void engage() ;
         string getStrategyLabel() const override ;
+        void setStrategyLabel(string Label) override ;
         ~Flanking() ;
 
 };

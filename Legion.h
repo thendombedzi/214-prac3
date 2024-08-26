@@ -14,10 +14,7 @@ class Legion : public UnitComponent {
         vector<UnitComponent*> children ;
     public :
         int getSize(){
-            int count = 0 ;
-            for(UnitComponent* child : children)
-                ++count;
-            return count ;
+            return children.size();
         }
         void move() override ;
         void fight() override ;

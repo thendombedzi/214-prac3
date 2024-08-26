@@ -9,6 +9,7 @@ class Fortification : public BattleStrategy {
     public :
         virtual void engage() ;
         string getStrategyLabel() const override ;
+        void setStrategyLabel(string Label) override ;
         ~Fortification();
 };
 
