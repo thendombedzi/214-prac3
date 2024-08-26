@@ -4,9 +4,13 @@
 #include "BattleStrategy.h"
 
 class Ambush : public BattleStrategy {
-public:
-    virtual void engage() ;
-    ~Ambush() ;
+    private :
+        string StrategyLabel ;
+    public:
+        virtual void engage() override ;
+        string getStrategyLabel() const override ;
+        void setStrategyLabel(string Label) override ;
+        ~Ambush() ;
 };
 
 #endif

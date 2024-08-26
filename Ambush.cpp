@@ -11,3 +11,11 @@ Ambush::~Ambush()
 {
       cout << "Ambush deleting" << endl;
 }
+
+string Ambush::getStrategyLabel() const {
+      return StrategyLabel ;
+}
+
+void Ambush::setStrategyLabel(string Label){
+      StrategyLabel = Label ;
+}

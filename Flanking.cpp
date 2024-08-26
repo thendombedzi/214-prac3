@@ -10,3 +10,7 @@ Flanking::~Flanking()
 {
       cout << "Flanking deleting" << endl;
 }
+
+string Flanking::getStrategyLabel() const{
+      return StrategyLabel;
+}
