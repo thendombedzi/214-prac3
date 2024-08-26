@@ -5,6 +5,8 @@
 void TacticalCommand::setStrategy(BattleStrategy* s) 
 {
     this->strategy = s;
+    planner->setStrategy(s);
+    archives->addTacticalMemento(planner->createMemento(),"");/// saves the set strategy into the Tactical Planner
 }
 
 void TacticalCommand::executeStrategy() 

@@ -12,7 +12,6 @@ class TacticalPlanner { // Originator
     BattleStrategy* currentStrategy ; // Current State
 
     public :
-    TacticalPlanner() : currentStrategy(nullptr) {};
     void setStrategy(BattleStrategy* newStrategy);
     TacticalMemento* createMemento();
     void restoreMemento(TacticalMemento* memento);

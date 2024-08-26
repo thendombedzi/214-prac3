@@ -11,6 +11,8 @@ void WarArchives::removeTacticalMemento(string label){
     if(it != mementoList.end()){
         mementoList.erase(it, mementoList.end());
     }
+
+
 }
 
 TacticalMemento* WarArchives::getTacticalMemento(const string& label) const {

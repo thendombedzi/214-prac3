@@ -3,11 +3,13 @@
 
 #include "BattleStrategy.h"
 
-class Flanking : public BattleStrategy 
-{
-public:
-    virtual void engage() ;
-    ~Flanking() ;
+class Flanking : public BattleStrategy {
+    private :
+        string StrategyLabel ;
+    public:
+        virtual void engage() ;
+        string getStrategyLabel() const override ;
+        ~Flanking() ;
 
 };
 

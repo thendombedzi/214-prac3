@@ -7,7 +7,7 @@
 #include "Flanking.h"
 #include "LegionUnit.h"
 
-class TacticalCommand {
+class TacticalCommand{
 private:
     BattleStrategy* strategy;
     TacticalPlanner* planner;
@@ -15,7 +15,7 @@ private:
      std::vector<LegionUnit*> units;
 
 public:
-    void setStrategy(BattleStrategy* s);
+    void setStrategy(BattleStrategy* s); // sets strategy and automatically creates a memento of it 
     void executeStrategy();
     void chooseBestStrategy();
     ~TacticalCommand();
